@@ -1,0 +1,2 @@
+basically, symlink any of the .??* files.
+non-dotted files aren't meant to be referenced directly.

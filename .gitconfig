@@ -1,0 +1,20 @@
+[user]
+   name = razamatan
+   email = razamatan@hotmail.com
+[core]
+   editor = /usr/bin/vim
+[alias]
+   d = difftool --no-prompt
+   df = difftool
+   br = branch
+   co = checkout
+   st = status
+   stp = status --porcelain
+   staged = diff --staged --name-only
+   stashed = stash list
+   unadd = reset HEAD
+   unstash = stash pop
+[merge]
+   tool = vimdiff
+[push]
+   default = matching

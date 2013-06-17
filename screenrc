@@ -1,0 +1,48 @@
+startup_message off
+#nethack on
+altscreen on
+autodetach on
+defscrollback 5000
+defutf8 on
+defnonblock 5 # non-blocking mode to better cope with flaky ssh connections
+vbell off
+unsetenv DISPLAY
+
+# remap the escape character to ^Z
+escape ^Zz
+defescape ^Zz
+
+# caption (black hostname)
+caption always "%{= ${SCRN_COLOR}W}%H %{-}%-Lw%{= bW}%50L>%n%f* %t%{-}%+Lw%<"
+
+# hardstatus (grey time)
+hardstatus alwayslastline "%{${SCRN_COLOR}}[%m/%d %c:%s]%{c} %h"
+
+# terminfo
+#term xterm-256color
+termcapinfo xterm|xterms|xs|rxvt ti@:te@
+termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
+#termcapinfo xterm*|rxvt*|kterm*|Eterm* hs:ts=\E]0;:fs=\007:ds=\E]0;\007
+# allow bold colors - necessary for some reason
+attrcolor b ".I"
+# tell screen how to set colors. AB = background, AF=foreground
+# erase background with current bg color
+defbce "on"
+
+# Remove some stupid / dangerous key bindings
+#bind L
+bind k
+bind ^k
+bind .
+bind ^\
+bind \\
+bind ^h
+bind h
+# Make them better
+bind K kill
+bind } history
+
+# extra bindings
+bind R source $HOME/.dotfiles/screenrc
+
+source $HOME/.dotfiles/screenrc.$THIS_DOMAIN

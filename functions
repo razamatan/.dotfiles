@@ -1,0 +1,145 @@
+setenv() { export $1="$2"; }
+
+alias() {
+   if [ $# -eq 2 ] ; then
+      builtin alias $1="$2"
+   elif [ $# -eq 1 ] ; then
+      builtin alias "$*"
+   else
+      builtin alias
+   fi
+}
+
+pushd() {
+   export DIRMAX=${DIRMAX:-10}
+   local verbose=0
+   local ret
+   if [ "$1" == "-v" ] ; then
+      verbose=1
+      shift
+   fi
+   if [ $# -eq 0 ] ; then
+      builtin cd
+      ret=$?
+      builtin pushd -n $OLDPWD > /dev/null
+   elif [ "$1" == "-" ] ; then
+      builtin cd -
+      ret=$?
+      builtin pushd -n $OLDPWD > /dev/null
+   else
+      builtin pushd "$@" > /dev/null
+      ret=$?
+   fi
+   local len=${#DIRSTACK[@]}
+   for i in `seq 1 $len`; do
+      eval p=~$i
+      if [ "$p" = "$PWD" ] ; then
+         builtin popd -n +$i > /dev/null
+         break
+      fi
+   done
+   [ $len -gt $DIRMAX ] && builtin popd -n -0 > /dev/null
+   [ $verbose -eq 1 ] && builtin dirs -v
+   return $ret
+}
+
+popd() {
+   local verbose=0
+   if [ "$1" == "-v" ] ; then
+      verbose=1
+      shift
+   fi
+   builtin popd "$@" > /dev/null
+   local ret=$?
+   [ $verbose -eq 1 ] && builtin dirs -v
+   return $ret
+}
+
+cdp() {
+   pushd +$1
+}
+
+# viw: vi `which binary`
+viw() {
+   local tmp=`which $@`
+   if [ ! -z $tmp ]; then
+      vim $tmp
+      echo $tmp
+   fi
+}
+
+# tarcp: copies a directory via tar into another directory
+tarcp() {
+   if [ $# == 2 ] && [ -d "$1" ]  && [ -d "$2" ] ; then
+      tar cf - "$1" | (cd "$2/"; tar xf -)
+   else
+      echo Usage: tarcp dir-to-copy container-dir
+   fi
+}
+
+sshtunnel() {
+   if [ $# -ne 3 ] ; then
+      echo "usage: sshtunnel host remote-port local-port"
+   else
+      /usr/bin/ssh $1 -L $3:localhost:$2
+   fi
+}
+
+sshproxy() {
+   if [ $# -ne 4 ] ; then
+      echo "usage: sshproxy dest dest-port proxy proxy-port"
+   else
+      /usr/bin/ssh -N $3 -L $4:$1:$2
+   fi
+}
+
+# quote
+quote() {
+   local quotes=~/docs/quotes.txt
+   vi $quotes
+   if [ $quotes.dat -ot $quotes ] ; then
+      echo Updating quotes.
+      strfile -s $quotes
+   fi
+}
+
+archive_maildir() {
+   if [ $# != 0 ] ; then
+      while [ $# != 0 ]; do
+         if [ -d "$1" ] ; then
+            tar zcf "$1.tgz" "$1" && rm -rf "$1"
+         else
+            echo "'$1' is not a directory"
+         fi
+         shift
+      done
+   else
+      echo "usage: archive_maildir maildir1 [maildir2 ... maildirN]"
+   fi
+}
+
+# pyenv
+pyenv() {
+   if [ $# -ne 1 ] ; then
+      echo "usage: pyenv [virtualenv name]"
+   else
+      local env=$1
+      [ ${env:0:1} != '/' ] && env=~/env/$1
+      if [ -x $env/bin/python -a -e $env/bin/activate ] ; then
+         source $env/bin/activate
+         if [ "$TERM" = "screen" ]; then
+            printf '\ek%s\e\\' `basename $env`
+         fi
+      else
+         echo "$env is not a root of a virtual env"
+      fi
+   fi
+}
+
+# helper for showing current git branch in prompt
+function git-branch-prompt {
+   ref=$(git symbolic-ref HEAD 2> /dev/null) || return
+   echo "(${ref#refs/heads/})"
+}
+
+# vim: ft=sh :

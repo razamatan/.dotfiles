@@ -1,0 +1,44 @@
+# trivial
+alias ls "ls --color=auto"
+alias l "ls -CF"
+alias la "ls -AF"
+alias ll "ls -alF"
+alias lld "ls -al | grep '^d'"
+alias vi "vim"
+alias grep="grep --color=auto"
+alias h "history | grep"
+
+
+# cd navigation
+alias cdreal "cd \`/bin/pwd\`"
+alias dirs "\dirs -v"
+alias d "dirs"
+alias cd "pushd"
+alias r "pushd +1"
+alias cd- "popd -v"
+alias cd-- "popd -v -2"
+alias cd--- "popd -v -3"
+
+# this is sorta dangerous... ;)
+alias su "sudo su"
+
+# redot: soruce environment
+alias redot ". ~/.bashrc"
+
+# quick way to notes
+alias notes "vi ~/docs/notes"
+
+# screen
+[ $TERM != 'screen' ] && alias starts "exec screen -U -d -RR"
+
+# open via xdg-open
+hash xdg-open 2>&- && alias open xdg-open
+
+# irssi via mustafa if not found locally
+hash irssi 2>&- || alias irssi "ssh -t mustafa.hopto.org irssi"
+
+# extip: get my external ip
+alias extip "wget -O - -q http://www.networksecuritytoolkit.org/nst/cgi-bin/ip.cgi"
+#alias extip "curl http://automation.whatismyip.com/n09230945.asp"
+
+# vim: set ft=conf :

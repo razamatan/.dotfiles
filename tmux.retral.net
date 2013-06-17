@@ -1,0 +1,8 @@
+bind-key '!' neww -n mpd  ncmpcpp
+bind-key '@' neww -n mail /home/jin/bin/mutt
+bind-key '#' neww -n irc  irssi
+#bind '$' command -c remote
+#bind -c remote '@' screen -t dh ssh -x jinyi.us
+#bind -c remote '#' screen -t odin ssh -x odin
+
+#  vim: set ft=tmux :

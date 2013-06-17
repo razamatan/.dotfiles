@@ -1,0 +1,9 @@
+# bindings
+bind '!' screen -t mpd ncmpcpp
+bind '@' screen -t mail /home/jin/bin/mutt
+bind '#' screen -t irc  irssi
+bind '$' command -c remote
+bind -c remote '@' screen -t dh ssh -x jinyi.us
+bind -c remote '#' screen -t odin ssh -x odin
+
+#  vim: set ft=screen :

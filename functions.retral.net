@@ -1,0 +1,43 @@
+# ssh terminal title replacer
+ssh() {
+   case $TERM in
+      rxvt|*term|xterm*)
+         echo -ne "\033]0;ssh $@\007"
+         ;;
+      screen)
+         echo -ne "\033_ssh $@\033\\"
+         ;;
+   esac
+   /usr/bin/ssh $@
+}
+
+# log emerge
+logmerge() { emerge $@ 2>&1 | tee /var/log/emerge.last; }
+
+# service
+service() {
+   if [ $# != 0 -a -x /etc/init.d/$1 ] ; then
+      sudo /etc/init.d/$@
+   else
+      rc-status -a
+   fi
+}
+
+# killproc
+killproc() {
+   if [ -z $1 ] ; then
+      echo "usage: killproc /path/pidfile"
+   else
+      pid=`cat $1`
+      for i in `seq 1 10` ; do
+         ! ps -p $pid > /dev/null && break
+         echo not killed
+         killall -TERM stunnel
+         sleep 1
+      done
+      # last try
+      ps -p $pid > /dev/null && killall -KILL stunnel
+   fi
+}
+
+# vim: ft=sh :

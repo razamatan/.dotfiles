@@ -1,0 +1,36 @@
+#setenv LC_ALL en_US.UTF-8
+setenv EDITOR "vim -X"
+
+setenv PATH ~/bin:$PATH
+setenv CDPATH .:~:~/docs
+setenv PYTHONSTARTUP ${HOME}/.dotfiles/pyrc
+setenv SCREENRC ${HOME}/.dotfiles/screenrc
+
+# bash colors  (1;30 default)
+# Black       0;30     Dark Gray     1;30
+# Blue        0;34     Light Blue    1;34
+# Green       0;32     Light Green   1;32
+# Cyan        0;36     Light Cyan    1;36
+# Red         0;31     Light Red     1;31
+# Purple      0;35     Light Purple  1;35
+# Brown       0;33     Yellow        1;33
+# Light Gray  0;37     White         1;37
+
+# screen colors (k default)
+# 0 Black             .    leave color unchanged
+# 1 Red               b    blue
+# 2 Green             c    cyan
+# 3 Brown / yellow    d    default color
+# 4 Blue              g    green           b    bold
+# 5 Purple            k    blacK           B    blinking
+# 6 Cyan              m    magenta         d    dim
+# 7 White             r    red             r    reverse
+# 8 unused/illegal    w    white           s    standout
+# 9 transparent       y    yellow          u    underline
+
+# purle
+setenv BASH_COLOR ${BASH_COLOR:-0;36}
+setenv SCRN_COLOR ${SCRN_COLOR:-6}
+setenv TMUX_COLOR ${TMUX_COLOR:-cyan}
+
+# vim: set ft=sh :

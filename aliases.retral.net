@@ -1,0 +1,22 @@
+# findep: find out what REALLY uses it
+alias findep "find /var/db/pkg -name '*DEPEND' | xargs grep"
+
+# envconf: configure using our environment
+alias envconf "$(grep ^CFLAGS /etc/make.conf) ./configure"
+
+# pscan: prints recent port scan activities
+alias pscan "grep -hs 'PORT SCAN' /var/log/critical /var/log/iptables | sed -e 's:${HOSTNAME}.*SRC=::' -e 's: DST.*::' | uniq"
+
+# music stuff
+alias id3 "id3v2"
+
+# financial crypt
+alias mountFinance "encfs -i5 /home/jin/docs/.financial /home/jin/docs/financial"
+alias umountFinance "fusermount -u /home/jin/docs/financial"
+
+# synergy
+alias synergy "synergys -f -a localhost"
+
+alias etc-update "dispatch-conf"
+
+alias dbssh "ssh -L 3307:esquire.jinyi.us:3306"

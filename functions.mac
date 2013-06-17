@@ -1,0 +1,19 @@
+sshsynergyc() {
+   if [ -z $1 ] ; then
+      echo "usage: sshsynergyc host"
+   else
+      ps x | grep ssh | grep 24800 | awk '{print $1}' | xargs kill
+      ssh -f -N -L localhost:24800:$1:24800 $1
+      synergyc -f localhost
+   fi
+}
+
+pbscreen() {
+   if [ -z $1 ] ; then
+      echo "usage: pbscreen host"
+   else
+      pbcopy < <(ssh $1 cat /tmp/screen-exchange)
+   fi
+}
+
+# vim: ft=sh :
