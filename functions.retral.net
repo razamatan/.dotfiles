@@ -1,15 +1,15 @@
 # ssh terminal title replacer
-ssh() {
-   case $TERM in
-      rxvt|*term|xterm*)
-         echo -ne "\033]0;ssh $@\007"
-         ;;
-      screen)
-         echo -ne "\033_ssh $@\033\\"
-         ;;
-   esac
-   /usr/bin/ssh $@
-}
+#ssh() {
+#   case $TERM in
+#      rxvt|*term|xterm*)
+#         echo -ne "\033]0;ssh $@\007"
+#         ;;
+#      screen)
+#         echo -ne "\033_ssh $@\033\\"
+#         ;;
+#   esac
+#   /usr/bin/ssh $@
+#}
 
 # log emerge
 logmerge() { emerge $@ 2>&1 | tee /var/log/emerge.last; }

@@ -142,4 +142,10 @@ function git-branch-prompt {
    echo "(${ref#refs/heads/})"
 }
 
+function cpufreqs {
+   for i in $(seq 0 `cut -f2 -d- /sys/devices/system/cpu/possible`); do
+      echo cpu$i `sudo cat /sys/devices/system/cpu/cpu\$i/cpufreq/cpuinfo_cur_freq`
+   done
+}
+
 # vim: ft=sh :
