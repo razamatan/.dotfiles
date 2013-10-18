@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # keybpard repeat rate
-xset r rate 200 40
+xset r rate 275 40
 
 # monitor
 xset +dpms
