@@ -5,6 +5,7 @@ setenv PATH ~/bin:$PATH
 setenv CDPATH .:~:~/docs
 setenv PYTHONSTARTUP ${HOME}/.dotfiles/pyrc
 setenv SCREENRC ${HOME}/.dotfiles/screenrc
+setenv BZR_LOG $HOME/.bazaar/bzr.log
 
 # bash colors  (1;30 default)
 # Black       0;30     Dark Gray     1;30
@@ -28,7 +29,7 @@ setenv SCREENRC ${HOME}/.dotfiles/screenrc
 # 8 unused/illegal    w    white           s    standout
 # 9 transparent       y    yellow          u    underline
 
-# purle
+# session color
 setenv BASH_COLOR ${BASH_COLOR:-0;36}
 setenv SCRN_COLOR ${SCRN_COLOR:-6}
 setenv TMUX_COLOR ${TMUX_COLOR:-cyan}
