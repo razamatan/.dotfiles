@@ -23,7 +23,8 @@ unalias -a
 [ -f ~/.dotfiles.$THIS_DOMAIN/environment ] && . ~/.dotfiles.$THIS_DOMAIN/environment
 
 # colors for ls, etc.
-DIR_COLORS=${DIR_COLORS:-~/.dotfiles/dircolors.ansi-universal}
+DIR_COLORS=${DIR_COLORS:-/etc/DIR_COLORS}
+#DIR_COLORS=${DIR_COLORS:-~/.dotfiles/dircolors.ansi-universal}
 [ -f $DIR_COLORS ] && hash dircolors 2>&- && eval `dircolors -b $DIR_COLORS`
 
 # shell options
