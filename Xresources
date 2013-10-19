@@ -3,7 +3,7 @@ urxvt*geometry: 80x35
 urxvt*saveLines: 100000
 urxvt*scrollBar: rxvt
 urxvt*cursorBlink: 1
-urxvt*cursorUnderline: 1
+urxvt*cursorUnderline: 0
 urxvt*iconFile:/home/jin/themes/icons/Nuvola/scalable/apps/gnome-terminal.svg
 !urxvt*perl-ext-common: default,tabbed,matcher
 !urxvt*url-launcher: google-chrome
