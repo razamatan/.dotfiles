@@ -5,6 +5,10 @@ urxvt*scrollBar: rxvt
 urxvt*cursorBlink: 1
 urxvt*cursorUnderline: 0
 urxvt*iconFile:/home/jin/themes/icons/Nuvola/scalable/apps/gnome-terminal.svg
+
+urxvt*perl-ext-common: default,xim-onthespot
+urxvt*inputMethod: ibus
+urxvt*preeditType: OnTheSpot
 !urxvt*perl-ext-common: default,tabbed,matcher
 !urxvt*url-launcher: google-chrome
 !urxvt*matcher.button: 1
