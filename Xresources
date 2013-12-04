@@ -18,6 +18,8 @@ urxvt*font: xft:terminus:pixelsize=12
 !urxvt*letterSpace: -1
 !urxvt*font: xft:Andale Mono:pixelsize=11:antialias=0
 !urxvt*boldFont: xft:Andale Mono:bold:pixelsize=11:antialias=0
+urxvt*transparent: true
+urxvt*shading: 5
 
 Xft.autohint: 0
 Xft.hinting: 1
