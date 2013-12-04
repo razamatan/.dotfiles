@@ -1,2 +1,3 @@
 setenv CDPATH $CDPATH:~/docs/class:/home:/home/audio:/mnt
 setenv MOZILLA_NEWTYPE tab
+setenv XSESSION awesome
