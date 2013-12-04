@@ -1,5 +1,5 @@
 #!/bin/sh
-setenv XSESSION awesome
+export XSESSION=awesome
 
 # keybpard repeat rate
 xset r rate 275 40
