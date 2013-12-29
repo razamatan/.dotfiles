@@ -41,4 +41,7 @@ hash irssi 2>&- || alias irssi "ssh -t mustafa.hopto.org irssi"
 alias extip "wget -O - -q http://www.networksecuritytoolkit.org/nst/cgi-bin/ip.cgi"
 #alias extip "curl http://automation.whatismyip.com/n09230945.asp"
 
+# find dupes via md5sum
+alias md5dupes "find -type f -exec md5sum {} \; | sort | uniq --all-repeated=separate -w 33 | cut -c35-"
+
 # vim: set ft=conf :
