@@ -34,9 +34,6 @@ alias notes "vi ~/docs/notes"
 # open via xdg-open
 hash xdg-open 2>&- && alias open xdg-open
 
-# irssi via mustafa if not found locally
-hash irssi 2>&- || alias irssi "ssh -t mustafa.hopto.org irssi"
-
 # extip: get my external ip
 alias extip "wget -O - -q http://www.networksecuritytoolkit.org/nst/cgi-bin/ip.cgi"
 #alias extip "curl http://automation.whatismyip.com/n09230945.asp"
