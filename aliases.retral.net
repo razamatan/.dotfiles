@@ -20,3 +20,8 @@ alias synergy "synergys -f -a localhost"
 alias etc-update "dispatch-conf"
 
 alias dbssh "ssh -L 3307:esquire.jinyi.us:3306"
+
+# vlc
+alias nvlc "nvlc --no-color"
+alias nvlc-podcast "nvlc -S podcast --podcast-urls"
+alias radio 'nvlc --no-playlist-autostart "http://35.8.90.120:9000/listen.m3u" "http://kexp.org/kexp-wma.asx"'
