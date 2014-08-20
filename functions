@@ -138,6 +138,7 @@ pyenv() {
 
 # helper for showing current git branch in prompt
 function git-branch-prompt {
+   [ $PWD == "/zhome" ] && return
    ref=$(git symbolic-ref HEAD 2> /dev/null) || return
    echo "(${ref#refs/heads/})"
 }
