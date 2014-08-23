@@ -12,8 +12,8 @@ alias pscan "grep -hs 'PORT SCAN' /var/log/critical /var/log/iptables | sed -e '
 alias id3 "id3v2"
 
 # financial crypt
-alias mountFinance "encfs -i5 /home/jin/docs/.financial /home/jin/docs/financial"
-alias umountFinance "fusermount -u /home/jin/docs/financial"
+alias mountFinance "encfs -i5 /home/jin/docs/.financial /home/jin/secure"
+alias umountFinance "fusermount -u /home/jin/financial"
 
 # synergy
 alias synergy "synergys -f -a localhost"
