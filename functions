@@ -93,8 +93,8 @@ sshproxy() {
    fi
 }
 
-# quote
-quote() {
+# quotes
+quotes() {
    local quotes=~/docs/quotes.txt
    vi $quotes
    if [ $quotes.dat -ot $quotes ] ; then
