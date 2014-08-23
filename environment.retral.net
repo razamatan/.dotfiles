@@ -1,2 +1,1 @@
-setenv CDPATH $CDPATH:~/docs/class:/home:/home/audio:/mnt
-setenv MOZILLA_NEWTYPE tab
+setenv CDPATH ${CDPATH}:~/docs/class:/zshares:/zmedia:/zshares/media

@@ -18,8 +18,8 @@ unalias -a
 [ -f ~/.dotfiles/functions.$THIS_OS ] && . ~/.dotfiles/functions.$THIS_OS
 [ -f ~/.dotfiles/functions.$THIS_DOMAIN ] && . ~/.dotfiles/functions.$THIS_DOMAIN
 [ -f ~/.dotfiles.$THIS_DOMAIN/functions ] && . ~/.dotfiles.$THIS_DOMAIN/functions
-[ -f ~/.dotfiles/environment ] && . ~/.dotfiles/environment
 [ -f ~/.dotfiles/environment.$THIS_OS ] && . ~/.dotfiles/environment.$THIS_OS
+[ -f ~/.dotfiles/environment ] && . ~/.dotfiles/environment
 [ -f ~/.dotfiles/environment.$THIS_DOMAIN ] && . ~/.dotfiles/environment.$THIS_DOMAIN
 [ -f ~/.dotfiles.$THIS_DOMAIN/environment ] && . ~/.dotfiles.$THIS_DOMAIN/environment
 [ -f ~/.dotfiles/aliases ] && . ~/.dotfiles/aliases
