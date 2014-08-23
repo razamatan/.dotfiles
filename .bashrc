@@ -3,9 +3,9 @@ unset -f alias
 unalias -a
 
 # global definitions
-[ -f /etc/profile ] && . /etc/profile
-[ -f /etc/bashrc ] && . /etc/bashrc
-[ -f /etc/bash/bashrc ] && . /etc/bash/bashrc
+#[ -f /etc/profile ] && . /etc/profile
+#[ -f /etc/bashrc ] && . /etc/bashrc
+#[ -f /etc/bash/bashrc ] && . /etc/bash/bashrc
 
 # load up THIS_BOX THIS_DOMAIN THIS_OS
 [ $THIS_BOX ] || . ~/.dotfiles/.bash_profile
