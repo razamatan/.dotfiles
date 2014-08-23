@@ -2,7 +2,8 @@
 alias findep "find /var/db/pkg -name '*DEPEND' | xargs grep"
 
 # envconf: configure using our environment
-alias envconf "$(grep ^CFLAGS /etc/make.conf) ./configure"
+[ -f /etc/make.conf ] && alias envconf "$(grep ^CFLAGS /etc/make.conf) ./configure"
+[ -f /opt/local/etc/mk.conf ] && alias envconf "$(grep ^CFLAGS /opt/local/etc/mk.conf) ./configure"
 
 # pscan: prints recent port scan activities
 alias pscan "grep -hs 'PORT SCAN' /var/log/critical /var/log/iptables | sed -e 's:${HOSTNAME}.*SRC=::' -e 's: DST.*::' | uniq"

@@ -7,20 +7,25 @@ unalias -a
 [ -f /etc/bashrc ] && . /etc/bashrc
 [ -f /etc/bash/bashrc ] && . /etc/bash/bashrc
 
-# host specific
+# load up THIS_BOX THIS_DOMAIN THIS_OS
 [ $THIS_BOX ] || . ~/.dotfiles/.bash_profile
+
+# host specific (mainly for colors)
 [ -f ~/.dotfiles/$THIS_BOX ] && . ~/.dotfiles/$THIS_BOX
 
 # environment
 [ -f ~/.dotfiles/functions ] && . ~/.dotfiles/functions
+[ -f ~/.dotfiles/functions.$THIS_OS ] && . ~/.dotfiles/functions.$THIS_OS
 [ -f ~/.dotfiles/functions.$THIS_DOMAIN ] && . ~/.dotfiles/functions.$THIS_DOMAIN
 [ -f ~/.dotfiles.$THIS_DOMAIN/functions ] && . ~/.dotfiles.$THIS_DOMAIN/functions
-[ -f ~/.dotfiles/aliases ] && . ~/.dotfiles/aliases
-[ -f ~/.dotfiles/aliases.$THIS_DOMAIN ] && . ~/.dotfiles/aliases.$THIS_DOMAIN
-[ -f ~/.dotfiles.$THIS_DOMAIN/aliases ] && . ~/.dotfiles.$THIS_DOMAIN/aliases
 [ -f ~/.dotfiles/environment ] && . ~/.dotfiles/environment
+[ -f ~/.dotfiles/environment.$THIS_OS ] && . ~/.dotfiles/environment.$THIS_OS
 [ -f ~/.dotfiles/environment.$THIS_DOMAIN ] && . ~/.dotfiles/environment.$THIS_DOMAIN
 [ -f ~/.dotfiles.$THIS_DOMAIN/environment ] && . ~/.dotfiles.$THIS_DOMAIN/environment
+[ -f ~/.dotfiles/aliases ] && . ~/.dotfiles/aliases
+[ -f ~/.dotfiles/aliases.$THIS_OS ] && . ~/.dotfiles/aliases.$THIS_OS
+[ -f ~/.dotfiles/aliases.$THIS_DOMAIN ] && . ~/.dotfiles/aliases.$THIS_DOMAIN
+[ -f ~/.dotfiles.$THIS_DOMAIN/aliases ] && . ~/.dotfiles.$THIS_DOMAIN/aliases
 
 # colors for ls, etc.
 DIR_COLORS=${DIR_COLORS:-/etc/DIR_COLORS}
@@ -31,10 +36,10 @@ DIR_COLORS=${DIR_COLORS:-/etc/DIR_COLORS}
 ulimit -c 0             # cores are for imperfect people ;)
 shopt -s checkwinsize   # check window size changes every time
 shopt -s histappend     # append to history file
-HISTFILESIZE=300
+HISTFILESIZE=1000
 HISTIGNORE="&:l:l?:cd:[bf]g:exit:h *:history"
 HISTCONTROL="ignoreboth"
-FIGNORE=".o:~"
+FIGNORE=".o:~:.swp"
 
 # make less more friendly for non-text input files, see lesspipe(1)
 #[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
@@ -78,6 +83,8 @@ fi
 bashcomp_script='/etc/profile.d/bash_completion.sh'
 if hash brew 2>&- && [ -f `brew --prefix`$bashcomp_script ] ; then
    . `brew --prefix`$bashcomp_script
+elif [ -f /opt/local/$bashcomp_script ] ; then
+   . /opt/local/$bashcomp_script
 elif [ -f $bashcomp_script ] ; then
    . $bashcomp_script
 elif [ -f /etc/bash_completion ] ; then

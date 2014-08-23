@@ -99,7 +99,7 @@ quote() {
    vi $quotes
    if [ $quotes.dat -ot $quotes ] ; then
       echo Updating quotes.
-      strfile -s $quotes
+      fortune -u $quotes
    fi
 }
 
