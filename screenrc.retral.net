@@ -1,7 +1,7 @@
 # bindings
 bind '!' screen -t mpd ncmpcpp
-bind '@' screen -t mail /home/jin/bin/mutt
-bind '#' screen -t irc  irssi
+bind '@' screen -t mail mutt -f =Inbox
+bind '#' screen -t irc ssh -t services.retral.net /opt/local/bin/irssi
 bind '$' command -c remote
 bind -c remote '@' screen -t dh ssh -x jinyi.us
 bind -c remote '#' screen -t odin ssh -x odin

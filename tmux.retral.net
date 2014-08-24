@@ -1,5 +1,5 @@
 bind-key '!' neww -n mpd  ncmpcpp
-bind-key '@' neww -n mail /home/jin/bin/mutt
+bind-key '@' neww -n mail 'mutt -f =Inbox'
 bind-key '#' neww -n irc 'ssh -t services.retral.net /opt/local/bin/irssi'
 #bind '$' command -c remote
 #bind -c remote '@' screen -t dh ssh -x jinyi.us
