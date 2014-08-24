@@ -13,7 +13,7 @@ alias id3 "id3v2"
 
 # financial crypt
 alias mountFinance "encfs -i5 /home/jin/docs/.financial /home/jin/secure"
-alias umountFinance "fusermount -u /home/jin/financial"
+alias umountFinance "fusermount -u /home/jin/secure"
 
 # synergy
 alias synergy "synergys -f -a localhost"
