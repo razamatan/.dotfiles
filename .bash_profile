@@ -12,7 +12,7 @@ case $OSTYPE in
       fqdn=`hostname -f`
 esac
 THIS_BOX=$(cut -d. -f1 <<< $fqdn)
-THIS_DOMAIN=$(cut -d. -f2- <<< $fqdn)
+THIS_DOMAIN=$(awk -F. '{print $(NF-1)"."$NF}' <<< $fqdn)
 THIS_OS=`uname -s`
 export THIS_BOX THIS_DOMAIN THIS_OS THIS_OS
 unset fqdn
