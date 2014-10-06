@@ -71,7 +71,7 @@ viw() {
 # tarcp: copies a directory via tar into another directory
 tarcp() {
    if [ $# == 2 ] && [ -d "$1" ]  && [ -d "$2" ] ; then
-      tar cf - "$1" | (cd "$2/"; tar xf -)
+      tar --same-owner -cpf - "$1" | (cd "$2/"; tar --same-owner -xpf -)
    else
       echo Usage: tarcp dir-to-copy container-dir
    fi
