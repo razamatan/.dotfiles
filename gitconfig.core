@@ -1,5 +1,6 @@
 [core]
    editor = /usr/bin/vim
+   excludesfile = ~/.dotfiles/bazaar/ignore
 [alias]
    d = difftool --no-prompt
    df = difftool
