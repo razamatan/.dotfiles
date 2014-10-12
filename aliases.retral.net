@@ -12,8 +12,8 @@ alias pscan "grep -hs 'PORT SCAN' /var/log/critical /var/log/iptables | sed -e '
 alias id3 "id3v2"
 
 # financial crypt
-alias mountFinance "encfs -i5 /home/jin/docs/.financial /home/jin/secure"
-alias umountFinance "fusermount -u /home/jin/secure"
+alias mountFinance "sudo mount \$(sudo lofiadm -a /zshares/archive/.private -c aes-256-cbc) ~/.secure"
+alias umountFinance "sudo umount ~/.secure && sudo lofiadm -d /zshares/archive/.private"
 
 # synergy
 alias synergy "synergys -f -a localhost"
