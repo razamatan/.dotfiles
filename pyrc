@@ -1,14 +1,22 @@
-import os, readline, rlcompleter, atexit, logging
-
+import logging
 logging.basicConfig(level=logging.DEBUG)
+del logging
 
-history_file = os.path.expanduser('~/.pyhistory')
 try:
-    readline.read_history_file(history_file)
-except IOError:
-    pass
-readline.parse_and_bind("tab: complete")
-readline.set_history_length(1000)
-atexit.register(readline.write_history_file, history_file)
+   import readline
+   import os, rlcompleter, atexit
 
-del os, readline, rlcompleter, atexit, history_file, __file__, logging
+   history_file = os.path.expanduser('~/.pyhistory')
+   try:
+       readline.read_history_file(history_file)
+   except IOError:
+       pass
+   readline.parse_and_bind("tab: complete")
+   readline.set_history_length(1000)
+   atexit.register(readline.write_history_file, history_file)
+
+   del readline, os, rlcompleter, atexit, history_file
+except ImportError:
+   print "no history (missing readline)"
+
+del __file__
