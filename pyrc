@@ -17,6 +17,6 @@ try:
 
    del readline, os, rlcompleter, atexit, history_file
 except ImportError:
-   print "no history (missing readline)"
+   print("no history (missing readline)")
 
 del __file__
