@@ -30,7 +30,7 @@ Xft.lcdfilter: lcddefault
 Xft.rgba: rgb
 
 ! Black
-*color0:   #111111
+*color0:   #333333
 *color8:   #666666
 
 ! Red
