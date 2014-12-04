@@ -2,7 +2,7 @@
 setenv EDITOR "vim -X"
 
 setenv PATH ~/bin:$PATH
-setenv CDPATH .:~:~/docs
+#setenv CDPATH .:~:~/docs
 setenv PYTHONSTARTUP ${HOME}/.dotfiles/pyrc
 setenv SCREENRC ${HOME}/.dotfiles/screenrc
 setenv BZR_LOG $HOME/.bazaar/bzr.log
