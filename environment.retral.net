@@ -1,1 +1,1 @@
-setenv CDPATH ${CDPATH}:~/docs/class:/zshares:/zmedia:/zshares/media
+setenv CDPATH ${CDPATH}:~/docs/class
