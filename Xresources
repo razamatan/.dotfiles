@@ -14,20 +14,21 @@ urxvt*preeditType: OnTheSpot
 !urxvt*matcher.button: 1
 
 urxvt*allow_bold: 0
-urxvt*font: xft:terminus:pixelsize=12
 !urxvt*letterSpace: -1
+urxvt*font: xft:Terminus:pixelsize=12,xft:Noto Sans CJK KR
+!urxvt*font: xft:Noto Sans:pixelsize=12,xft:Noto Sans CJK KR:pixelsize=12
 !urxvt*font: xft:Andale Mono:pixelsize=11:antialias=0
 !urxvt*boldFont: xft:Andale Mono:bold:pixelsize=11:antialias=0
 urxvt*transparent: true
 urxvt*shading: 5
 
-Xft.autohint: 0
-Xft.hinting: 1
-Xft.antialias: 1
-Xft.hintstyle: hintfull
-Xft.dpi: 96
-Xft.lcdfilter: lcddefault
-Xft.rgba: rgb
+!Xft.dpi: 96
+!Xft.autohint: 0
+!Xft.hinting: 1
+!Xft.antialias: 1
+!Xft.hintstyle: hintfull
+!Xft.lcdfilter: lcddefault
+!Xft.rgba: rgb
 
 ! Black
 *color0:   #333333

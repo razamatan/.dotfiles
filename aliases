@@ -35,8 +35,7 @@ alias notes "vi ~/docs/notes"
 hash xdg-open 2>&- && alias open xdg-open
 
 # extip: get my external ip
-alias extip "wget -O - -q http://www.networksecuritytoolkit.org/nst/cgi-bin/ip.cgi"
-#alias extip "curl http://automation.whatismyip.com/n09230945.asp"
+alias extip "wget -qO- http://ipecho.net/plain"
 
 # find dupes via md5sum
 alias md5dupes "find -type f -exec md5sum {} \; | sort | uniq --all-repeated=separate -w 33 | cut -c35-"
