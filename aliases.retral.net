@@ -8,9 +8,6 @@ alias findep "find /var/db/pkg -name '*DEPEND' | xargs grep"
 # pscan: prints recent port scan activities
 alias pscan "grep -hs 'PORT SCAN' /var/log/critical /var/log/iptables | sed -e 's:${HOSTNAME}.*SRC=::' -e 's: DST.*::' | uniq"
 
-# music stuff
-alias id3 "id3v2"
-
 # financial crypt
 alias mountFinance "sudo mount \$(sudo lofiadm -a /zshares/archive/.private -c aes-256-cbc) ~/.secure"
 alias umountFinance "sudo umount ~/.secure; sudo lofiadm -d /zshares/archive/.private"
