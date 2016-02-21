@@ -1,6 +1,6 @@
 bind-key '!' neww -n num2 'ssh root@num2'
-bind-key '@' neww -n mail 'ssh -t services.retral.net /opt/local/bin/mutt -f =Inbox'
-bind-key '#' neww -n irc 'ssh -t services.retral.net /opt/local/bin/irssi'
+bind-key '@' neww -n mail 'ssh -t services.retral.net bash -lc /opt/local/bin/mutt -f =Inbox'
+bind-key '#' neww -n irc 'ssh -t services.retral.net bash -lc /opt/local/bin/irssi'
 #bind-key '!' neww -n mpd  ncmpcpp
 #bind '$' command -c remote
 #bind -c remote '@' screen -t dh ssh -x jinyi.us

@@ -16,4 +16,7 @@ alias mpgstream "mpg123 -b 1024 --preload 0.5 -@"
 alias kexp "mpgstream http://live-mp3-128.kexp.org:8000/listen.pls"
 alias impact89fm "mpgstream http://35.8.90.120:9000/listen.m3u"
 
+alias camera-fix "sudo killall VDCAssistant"
+alias dock-fix "killall Dock"
+
 # vim: ft=conf :
