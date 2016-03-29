@@ -1,0 +1,5 @@
+#!/bin/sh
+GOOGLE_REPO="https://github.com/google/fonts.git/branches/master"
+SVN="svn checkout --depth immediates"
+
+$SVN $GOOGLE_REPO/apache/robotomono
