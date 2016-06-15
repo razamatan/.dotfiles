@@ -1,3 +1,4 @@
+urxvt*termName: rxvt-256color
 urxvt*depth: 32
 urxvt*geometry: 80x35
 urxvt*saveLines: 100000
@@ -23,12 +24,12 @@ urxvt*transparent: true
 urxvt*shading: 5
 
 !Xft.dpi: 96
-!Xft.autohint: 0
-!Xft.hinting: 1
-!Xft.antialias: 1
-!Xft.hintstyle: hintfull
-!Xft.lcdfilter: lcddefault
-!Xft.rgba: rgb
+Xft.autohint: 0
+Xft.hintstyle: hintslight
+Xft.lcdfilter: lcddefault
+Xft.hinting: 1
+Xft.antialias: 1
+Xft.rgba: rgb
 
 ! Black
 *color0:   #333333
