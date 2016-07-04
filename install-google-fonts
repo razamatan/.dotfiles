@@ -1,5 +1,15 @@
 #!/bin/sh
-GOOGLE_REPO="https://github.com/google/fonts.git/branches/master"
-SVN="svn checkout --depth immediates"
+# $SVN $GOOGLE_REPO/apache/robotomono
 
-$SVN $GOOGLE_REPO/apache/robotomono
+CURL="curl -O"
+GOOGLE_RAW="https://raw.githubusercontent.com/google/fonts/master"
+$CURL $GOOGLE_RAW/apache/robotomono/RobotoMono-Bold.ttf
+$CURL $GOOGLE_RAW/apache/robotomono/RobotoMono-BoldItalic.ttf
+$CURL $GOOGLE_RAW/apache/robotomono/RobotoMono-Italic.ttf
+$CURL $GOOGLE_RAW/apache/robotomono/RobotoMono-Light.ttf
+$CURL $GOOGLE_RAW/apache/robotomono/RobotoMono-LightItalic.ttf
+$CURL $GOOGLE_RAW/apache/robotomono/RobotoMono-Medium.ttf
+$CURL $GOOGLE_RAW/apache/robotomono/RobotoMono-MediumItalic.ttf
+$CURL $GOOGLE_RAW/apache/robotomono/RobotoMono-Regular.ttf
+$CURL $GOOGLE_RAW/apache/robotomono/RobotoMono-Thin.ttf
+$CURL $GOOGLE_RAW/apache/robotomono/RobotoMono-ThinItalic.ttf
