@@ -14,14 +14,14 @@
 # log emerge
 logmerge() { emerge $@ 2>&1 | tee /var/log/emerge.last; }
 
-# service
-service() {
-   if [ $# != 0 -a -x /etc/init.d/$1 ] ; then
-      sudo /etc/init.d/$@
-   else
-      rc-status -a
-   fi
-}
+# service - deprecated, use /sbin/service
+#service() {
+#   if [ $# != 0 -a -x /etc/init.d/$1 ] ; then
+#      sudo /etc/init.d/$@
+#   else
+#      rc-status -a
+#   fi
+#}
 
 # killproc
 killproc() {
