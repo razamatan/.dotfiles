@@ -27,6 +27,7 @@ alias redot ". ~/.bashrc"
 
 # quick way to notes
 alias notes "vi ~/docs/notes"
+alias todo "vi ~/docs/todo"
 
 # screen
 [ $TERM != 'screen' ] && alias starts "exec screen -U -d -RR"

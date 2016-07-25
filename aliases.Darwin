@@ -5,6 +5,7 @@ alias lea "ls -lea"
 alias r "pushd -v +1"
 
 alias notes "vi ~/Documents/notes"
+alias todo "vi ~/Documents/todo"
 
 alias erase "stty erase "
 alias md5sum "md5 -q"
