@@ -36,7 +36,7 @@ alias todo "vi ~/docs/todo"
 hash xdg-open 2>&- && alias open xdg-open
 
 # extip: get my external ip
-alias extip "wget -qO- http://ipecho.net/plain"
+alias extip "curl http://ipecho.net/plain"
 
 # find dupes via md5sum
 alias md5dupes "find -type f -exec md5sum {} \; | sort | uniq --all-repeated=separate -w 33 | cut -c35-"
