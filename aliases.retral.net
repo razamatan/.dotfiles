@@ -10,7 +10,7 @@ alias pscan "grep -hs 'PORT SCAN' /var/log/critical /var/log/iptables | sed -e '
 
 # financial crypt
 alias mountFinance "sudo mount \$(sudo lofiadm -a /zshares/archive/.private -c aes-256-cbc) ~/.secure"
-alias umountFinance "sudo umount ~/.secure && sudo lofiadm -d /zshares/archive/.private"
+alias umountFinance "sudo umount ~/.secure; sudo lofiadm -d /zshares/archive/.private"
 
 # synergy
 alias synergy "synergys -f -a localhost"
