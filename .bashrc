@@ -36,7 +36,7 @@ DIR_COLORS=${DIR_COLORS:-/etc/DIR_COLORS}
 ulimit -c 0             # cores are for imperfect people ;)
 shopt -s checkwinsize   # check window size changes every time
 shopt -s histappend     # append to history file
-HISTFILESIZE=1000
+HISTFILESIZE=5000
 HISTIGNORE="&:l:l?:cd:[bf]g:exit:h *:history"
 HISTCONTROL="ignoreboth"
 FIGNORE=".o:~:.swp"
