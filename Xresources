@@ -16,8 +16,8 @@ urxvt*preeditType: OnTheSpot
 
 urxvt*allow_bold: 0
 !urxvt*letterSpace: -1
-urxvt*font: xft:Terminus:pixelsize=12,xft:Gulim:antialias=0
-!urxvt*font: xft:Roboto Mono:pixelsize=11:antialias=0:autohint=1,xft:Noto Sans Mono CJK KR:pixelsize=12
+urxvt*font: xft:xos4 terminus:pixelsize=12,xft:Gulim:antialias=0
+!urxvt*font: xft:Roboto Mono:pixelsize=11
 !urxvt*boldFont: xft:Andale Mono:bold:pixelsize=11:antialias=0
 urxvt*transparent: true
 urxvt*shading: 5
