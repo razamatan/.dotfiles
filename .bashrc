@@ -46,7 +46,7 @@ FIGNORE=".o:~:.swp"
 
 # prompt
 if [ "$TERM" != 'dumb' ] && [ -n "$BASH" ]  && [ $USER != 'root' ] ; then
-   export PS1="\$(git-branch-prompt)\[\e[${BASH_COLOR}m\]\h\[\e[0;31m\]<\[\e[0m\]\! \W\[\e[0;31m\]>\[\e[0m\]\$ "
+   export PS1="\$(hg-branch-prompt)\$(git-branch-prompt)\[\e[${BASH_COLOR}m\]\h\[\e[0;31m\]<\[\e[0m\]\! \W\[\e[0;31m\]>\[\e[0m\]\$ "
 fi
 
 # xterm title
