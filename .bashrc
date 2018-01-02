@@ -87,6 +87,8 @@ elif [ -f /opt/local/$bashcomp_script ] ; then
    . /opt/local/$bashcomp_script
 elif [ -f $bashcomp_script ] ; then
    . $bashcomp_script
+elif [ -f /usr/share/bash-completion/bash_completion ] ; then
+   . /usr/share/bash-completion/bash_completion
 elif [ -f /etc/bash_completion ] ; then
    . /etc/bash_completion
 fi
