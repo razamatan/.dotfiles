@@ -29,8 +29,7 @@ unalias -a
 
 # colors for ls, etc.
 DIR_COLORS=${DIR_COLORS:-/etc/DIR_COLORS}
-#DIR_COLORS=${DIR_COLORS:-~/.dotfiles/dircolors.ansi-universal}
-[ -f $DIR_COLORS ] && hash dircolors 2>&- && eval `dircolors -b $DIR_COLORS`
+hash dircolors 2>&- && [ -r $DIR_COLORS ] && eval "`dircolors -b $DIR_COLORS`" || eval "`dircolors -b`"
 
 # shell options
 ulimit -c 0             # cores are for imperfect people ;)
