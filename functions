@@ -137,20 +137,20 @@ pyenv() {
 }
 
 # helper for showing current git branch in prompt
-function git-branch-prompt {
+git_branch_prompt() {
    [ "$PWD" == "/zhome" ] && return
    ref=$(git symbolic-ref HEAD 2> /dev/null) || return
    echo "(${ref#refs/heads/})"
 }
 
 # helper for showing current hg branch in prompt
-function hg-branch-prompt {
+hg_branch_prompt() {
    [ "$PWD" == "/zhome" ] && return
    branch=$(hg branch 2> /dev/null) || return
    echo "(${branch})"
 }
 
-function cpufreqs {
+cpufreqs() {
    for i in $(seq 0 `cut -f2 -d- /sys/devices/system/cpu/possible`); do
       echo cpu$i `sudo cat /sys/devices/system/cpu/cpu\$i/cpufreq/cpuinfo_cur_freq`
    done

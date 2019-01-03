@@ -45,7 +45,7 @@ FIGNORE=".o:~:.swp"
 
 # prompt
 if [ "$TERM" != 'dumb' ] && [ -n "$BASH" ]  && [ $USER != 'root' ] ; then
-   export PS1="\$(hg-branch-prompt)\$(git-branch-prompt)\[\e[${BASH_COLOR}m\]\h\[\e[0;31m\]<\[\e[0m\]\! \W\[\e[0;31m\]>\[\e[0m\]\$ "
+   export PS1="\$(hg_branch_prompt)\$(git_branch_prompt)\[\e[${BASH_COLOR}m\]\h\[\e[0;31m\]<\[\e[0m\]\! \W\[\e[0;31m\]>\[\e[0m\]\$ "
 fi
 
 # xterm title
@@ -79,18 +79,20 @@ if [ "$TERM_PROGRAM" == "Apple_Terminal" ] ; then
 fi
 
 # bash completion
-bashcomp_script='/etc/profile.d/bash_completion.sh'
-if hash brew 2>&- && [ -f `brew --prefix`$bashcomp_script ] ; then
-   . `brew --prefix`$bashcomp_script
-elif [ -f /opt/local/$bashcomp_script ] ; then
-   . /opt/local/$bashcomp_script
-elif [ -f $bashcomp_script ] ; then
-   . $bashcomp_script
-elif [ -f /usr/share/bash-completion/bash_completion ] ; then
-   . /usr/share/bash-completion/bash_completion
-elif [ -f /etc/bash_completion ] ; then
-   . /etc/bash_completion
+if ! shopt -oq posix; then
+  bashcomp_script='/etc/profile.d/bash_completion.sh'
+  if hash brew 2>&- && [ -f `brew --prefix`$bashcomp_script ] ; then
+     . `brew --prefix`$bashcomp_script
+  elif [ -f /opt/local/$bashcomp_script ] ; then
+     . /opt/local/$bashcomp_script
+  elif [ -f $bashcomp_script ] ; then
+     . $bashcomp_script
+  elif [ -f /usr/share/bash-completion/bash_completion ] ; then
+     . /usr/share/bash-completion/bash_completion
+  elif [ -f /etc/bash_completion ] ; then
+     . /etc/bash_completion
+  fi
+  unset bashcomp_script
 fi
-unset bashcomp_script
 
 # vim: set ft=sh:
