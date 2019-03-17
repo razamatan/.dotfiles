@@ -93,7 +93,6 @@ sshproxy() {
    fi
 }
 
-# quotes
 quotes() {
    local quotes=~/docs/quotes.txt
    vi $quotes
@@ -118,7 +117,6 @@ archive_maildir() {
    fi
 }
 
-# pyenv
 pyenv() {
    if [ $# -ne 1 ] ; then
       echo "usage: pyenv [virtualenv name]"
@@ -148,12 +146,6 @@ hg_branch_prompt() {
    [ "$PWD" == "/zhome" ] && return
    branch=$(hg branch 2> /dev/null) || return
    echo "(${branch})"
-}
-
-cpufreqs() {
-   for i in $(seq 0 `cut -f2 -d- /sys/devices/system/cpu/possible`); do
-      echo cpu$i `sudo cat /sys/devices/system/cpu/cpu\$i/cpufreq/cpuinfo_cur_freq`
-   done
 }
 
 # vim: ft=sh :
