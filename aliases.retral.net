@@ -18,3 +18,7 @@ alias chrome-remote-desktop "/opt/google/chrome-remote-desktop/chrome-remote-des
 alias etc-update "dispatch-conf"
 
 alias dbssh "ssh -L 3307:esquire.jinyi.us:3306"
+
+# add -H host -U user
+# ~? for help, ~. to exit.  must be done after newline.
+alias ipmi "ipmitool -I lanplus sol activate"
