@@ -19,8 +19,6 @@ urxvt*allow_bold: 0
 urxvt*font: xft:xos4 terminus:pixelsize=12,xft:Gulim:antialias=0
 !urxvt*font: xft:Roboto Mono:pixelsize=11
 !urxvt*boldFont: xft:Andale Mono:bold:pixelsize=11:antialias=0
-urxvt*transparent: true
-urxvt*shading: 5
 
 !Xft.dpi: 96
 Xft.autohint: 0
@@ -62,7 +60,10 @@ Xft.rgba: rgb
 !*color7:   #bebebe
 !*color15:  #ffffff
 
-*background:              black
+!urxvt*transparent: true
+!urxvt*shading: 5
+!*background:              black
+urxvt*background: [85]#000000
 *foreground:              grey
 !*fading:                  40
 !*fadeColor:               black
