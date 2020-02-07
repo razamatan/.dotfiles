@@ -9,5 +9,5 @@ MANPATH=${MANPATH}:/opt/local/lib/perl5/man:/opt/local/lib/perl5/vendor_perl/man
 PATH=/usr/local/sbin:/usr/local/bin:/opt/local/sbin:/opt/local/bin:/usr/sbin:/usr/bin:/sbin
 TERMINFO=/opt/local/share/lib/terminfo
 
-#export FTPMODE MAIL MANPATH PAGER PATH TERMINFO
+#export FTPMODE MAIL PAGER
 export LANG TZ MANPATH PATH TERMINFO

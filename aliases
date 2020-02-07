@@ -22,7 +22,7 @@ alias cd--- "popd -v -3"
 # this is sorta dangerous... ;)
 alias su "sudo su"
 
-# redot: soruce environment
+# redot: source environment
 alias redot ". ~/.bashrc"
 
 # quick way to notes
