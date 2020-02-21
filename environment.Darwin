@@ -2,6 +2,7 @@ setenv CDPATH ${CDPATH}:~/Documents:~/Desktop:/Volumes
 
 setenv PATH /usr/local/homebrew/bin:${PATH}
 setenv MANPATH /usr/local/homebrew/man:${MANPATH}
+setenv BASH_SILENCE_DEPRECATION_WARNING 1
 #setenv NODE_PATH /usr/local/homebrew/lib/node
 #setenv HOMEBREW_TEMP /opt/tmp
 
