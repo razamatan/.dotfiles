@@ -16,5 +16,7 @@
    tool = vimdiff
 [push]
    default = matching
+[pull]
+   rebase = false
 
 ;  vim: set ft=gitconfig:
