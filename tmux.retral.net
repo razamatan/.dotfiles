@@ -1,10 +1,8 @@
-bind-key '!' neww -n num2 'ssh root@num2'
+#bind-key '!' neww -n mpd  ncmpcpp
 bind-key '@' neww -n mail 'ssh -t heimdall.retral.net bash -lc /opt/local/bin/mutt -f =Inbox'
 bind-key '#' neww -n irc 'ssh -t heimdall.retral.net bash -lc /opt/local/bin/irssi'
-
-#bind-key '!' neww -n mpd  ncmpcpp
-#bind '$' command -c remote
-#bind -c remote '@' screen -t dh ssh -x jinyi.us
-#bind -c remote '#' screen -t odin ssh -x odin
+bind-key '$' switch-client -Tremote
+bind-key -Tremote '!' neww -n num2 'ssh root@num2'
+bind-key -Tremote '$' neww -n dh 'ssh -x jinyi.us'
 
 # vim: set ft=tmux :
