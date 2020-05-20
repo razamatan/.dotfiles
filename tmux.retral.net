@@ -2,7 +2,8 @@
 bind-key '@' neww -n mail 'ssh -t heimdall.retral.net bash -lc /opt/local/bin/mutt -f =Inbox'
 bind-key '#' neww -n irc 'ssh -t heimdall.retral.net bash -lc /opt/local/bin/irssi'
 bind-key '$' switch-client -Tremote
+bind-key -Tremote '$' neww -n mustafa 'ssh mustafa'
 bind-key -Tremote '!' neww -n num2 'ssh root@num2'
-bind-key -Tremote '$' neww -n dh 'ssh -x jinyi.us'
+bind-key -Tremote '5' neww -n dh 'ssh -x jinyi.us'
 
 # vim: set ft=tmux :
