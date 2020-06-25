@@ -46,7 +46,8 @@
                 "hidden": false,
                 "name": "Ubuntu",
                 "source": "Windows.Terminal.Wsl",
-                "colorScheme": "Solarized Dark"
+                "colorScheme": "Solarized Dark",
+                "startingDirectory": "//wsl$/Ubuntu/home/jin"
             },
             {
                 // Make changes here to the powershell.exe profile.
