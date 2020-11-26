@@ -6,7 +6,7 @@ setenv PATH ~/bin:$PATH
 setenv PYTHONSTARTUP ${HOME}/.dotfiles/pyrc
 setenv SCREENRC ${HOME}/.dotfiles/screenrc
 setenv BZR_LOG $HOME/.bazaar/bzr.log
-hash tmux 2>&- && setenv TMUX_VERSION $(tmux -V | cut -d' ' -f2)
+setenv TMUX_VERSION $(tmux -V 2>&- | cut -d' ' -f2)
 
 # bash colors  (1;30 default)
 # Black       0;30     Dark Gray     1;30
