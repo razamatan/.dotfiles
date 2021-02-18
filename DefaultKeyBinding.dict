@@ -1,5 +1,7 @@
 /* for OSX being silly about home/end
  * ln -sf ~/.dotfiles/DefaultKeyBinding.dict ~/Library/KeyBindings/
+ *
+ * don't forget to change Terminal's home (<ESC>OH) and end keys (<ESC>OF)
  */
 {
   /* Home Button*/
