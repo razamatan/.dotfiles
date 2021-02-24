@@ -17,6 +17,6 @@
 [push]
    default = matching
 [pull]
-   rebase = false
+   rebase = true
 
 ;  vim: set ft=gitconfig:
