@@ -1,0 +1,10 @@
+# brown/yellow
+export PRMT_COLOR='0;33'
+export SCRN_COLOR='y'
+export TMUX_COLOR='yellow'
+
+export PATH=$PATH:/Users/jin/promotedai/bin
+source /usr/local/opt/nvm/nvm.sh
+#export JAVA_HOME=/usr/local/opt/openjdk@11
+
+# vim: set ft=sh : #

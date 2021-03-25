@@ -18,8 +18,8 @@ unalias -a
 [ -f ~/.dotfiles/functions.$THIS_OS ] && . ~/.dotfiles/functions.$THIS_OS
 [ -f ~/.dotfiles/functions.$THIS_DOMAIN ] && . ~/.dotfiles/functions.$THIS_DOMAIN
 [ -f ~/.dotfiles.$THIS_DOMAIN/functions ] && . ~/.dotfiles.$THIS_DOMAIN/functions
-[ -f ~/.dotfiles/environment.$THIS_OS ] && . ~/.dotfiles/environment.$THIS_OS
 [ -f ~/.dotfiles/environment ] && . ~/.dotfiles/environment
+[ -f ~/.dotfiles/environment.$THIS_OS ] && . ~/.dotfiles/environment.$THIS_OS
 [ -f ~/.dotfiles/environment.$THIS_DOMAIN ] && . ~/.dotfiles/environment.$THIS_DOMAIN
 [ -f ~/.dotfiles.$THIS_DOMAIN/environment ] && . ~/.dotfiles.$THIS_DOMAIN/environment
 [ -f ~/.dotfiles/aliases ] && . ~/.dotfiles/aliases
@@ -27,9 +27,15 @@ unalias -a
 [ -f ~/.dotfiles/aliases.$THIS_DOMAIN ] && . ~/.dotfiles/aliases.$THIS_DOMAIN
 [ -f ~/.dotfiles.$THIS_DOMAIN/aliases ] && . ~/.dotfiles.$THIS_DOMAIN/aliases
 
+# bash specific
+[ -f ~/.dotfiles/functions.bash ] && . ~/.dotfiles/functions.bash
+[ -f ~/.dotfiles/aliases.bash ] && . ~/.dotfiles/aliases.bash
+
 # colors for ls, etc.
-DIR_COLORS=${DIR_COLORS:-/etc/DIR_COLORS}
-hash dircolors 2>&- && ([ -r $DIR_COLORS ] && eval "`dircolors -b $DIR_COLORS`" || eval "`dircolors -b`")
+if command_exists dircolors ; then
+   local DIR_COLORS=${DIR_COLORS:-/etc/DIR_COLORS}
+   [ -r $DIR_COLORS ] && eval "`dircolors -b $DIR_COLORS`" || eval "`dircolors -b`"
+fi
 
 # shell options
 ulimit -c 0             # cores are for imperfect people ;)
@@ -38,14 +44,13 @@ shopt -s histappend     # append to history file
 HISTFILESIZE=5000
 HISTIGNORE="&:l:l?:cd:[bf]g:exit:h *:history"
 HISTCONTROL="ignoreboth"
-FIGNORE=".o:~:.swp"
 
 # make less more friendly for non-text input files, see lesspipe(1)
 #[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
 # prompt
 if [ "$TERM" != 'dumb' ] && [ -n "$BASH" ]  && [ $USER != 'root' ] ; then
-   export PS1="\$(hg_branch_prompt)\$(git_branch_prompt)\[\e[${BASH_COLOR}m\]\h\[\e[0;31m\]<\[\e[0m\]\! \W\[\e[0;31m\]>\[\e[0m\]\$ "
+   export PS1="\$(hg_branch_prompt)\$(git_branch_prompt)\[\e[${PRMT_COLOR}m\]\h\[\e[0;31m\]<\[\e[0m\]\! \W\[\e[0;31m\]>\[\e[0m\]\$ "
 fi
 
 # xterm title
@@ -59,31 +64,11 @@ case $TERM in
    ;;
 esac
 
-# color term attempt
-if [ "$COLORTERM" == "gnome-terminal" ] ; then
-  export TERM='xterm-256color'
-fi
-# specific for mac
-if [ "$TERM_PROGRAM" == "Apple_Terminal" ] ; then
-   update_terminal_cwd() {
-      # Identify the directory using a "file:" scheme URL,
-      # including the host name to disambiguate local vs.
-      # remote connections. Percent-escape spaces.
-      local SEARCH=' '
-      local REPLACE='%20'
-      local PWD_URL="file://$HOSTNAME${PWD//$SEARCH/$REPLACE}"
-      printf '\e]7;%s\a' "$PWD_URL"
-   }
-   export TERM='xterm-256color'
-   PROMPT_COMMAND="update_terminal_cwd; $PROMPT_COMMAND"
-fi
-
-# bash completion
+# completion
+FIGNORE="~:.o:.swp"
 if ! shopt -oq posix; then
   bashcomp_script='/etc/profile.d/bash_completion.sh'
-  if hash brew 2>&- && [ -f `brew --prefix`$bashcomp_script ] ; then
-     . `brew --prefix`$bashcomp_script
-  elif [ -f /opt/local/$bashcomp_script ] ; then
+  if [ -f /opt/local/$bashcomp_script ] ; then
      . /opt/local/$bashcomp_script
   elif [ -f $bashcomp_script ] ; then
      . $bashcomp_script

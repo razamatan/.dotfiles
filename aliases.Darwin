@@ -2,20 +2,18 @@
 alias ls "ls -G"
 alias lea "ls -lea"
 
-alias r "pushd -v +1"
-
 alias notes "vi ~/Documents/notes"
 alias todo "vi ~/Documents/todo"
 
 alias erase "stty erase "
 alias md5sum "md5 -q"
-alias enscript "enscript --margins=40:40:40:40"
 
 alias myconfigure "CFLAGS='-O3 -pipe -fomit-frame-pointer' ./configure --prefix $HOME/local"
 
 alias mpgstream "mpg123 -b 1024 --preload 0.5 -@"
 alias kexp "mpgstream http://live-mp3-128.kexp.org:8000/listen.pls"
 alias impact89fm "mpgstream http://35.8.90.120:9000/listen.m3u"
+#alias enscript "enscript --margins=40:40:40:40"
 
 alias fix-camera "sudo killall VDCAssistant"
 alias fix-doc "killall Dock"

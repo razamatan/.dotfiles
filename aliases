@@ -6,24 +6,12 @@ alias ll "ls -alF"
 alias lld "ls -al | grep '^d'"
 alias vi "vim"
 alias grep="grep --color=auto"
-alias h "history | grep"
-
 
 # cd navigation
 alias cdreal "cd \`/bin/pwd\`"
-alias dirs "\dirs -v"
-alias d "dirs"
-alias cd "pushd"
-alias r "pushd +1"
-alias cd- "popd -v"
-alias cd-- "popd -v -2"
-alias cd--- "popd -v -3"
 
 # this is sorta dangerous... ;)
 alias su "sudo su"
-
-# redot: source environment
-alias redot ". ~/.bashrc"
 
 # quick way to notes
 alias notes "vi ~/docs/notes"
@@ -33,7 +21,7 @@ alias todo "vi ~/docs/todo"
 [ $TERM != 'screen' ] && alias starts "exec screen -U -d -RR"
 
 # open via xdg-open
-hash xdg-open 2>&- && alias open xdg-open
+command_exists xdg-open && alias open xdg-open
 
 # extip: get my external ip
 alias extip "curl http://ipecho.net/plain"
@@ -41,4 +29,4 @@ alias extip "curl http://ipecho.net/plain"
 # find dupes via md5sum
 alias md5dupes "find -type f -exec md5sum {} \; | sort | uniq --all-repeated=separate -w 33 | cut -c35-"
 
-# vim: set ft=conf :
+# vim: set ft=sh :

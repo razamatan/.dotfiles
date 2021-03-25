@@ -1,0 +1,8 @@
+# envconf: configure using our environment
+[ -f /opt/local/etc/mk.conf ] && alias envconf "$(grep ^CFLAGS /opt/local/etc/mk.conf) ./configure"
+
+# financial crypt
+alias mountFinance "sudo mount \$(sudo lofiadm -a /zshares/archive/.private -c aes-256-cbc) ~/.secure"
+alias umountFinance "sudo umount ~/.secure; sudo lofiadm -d /zshares/archive/.private"
+
+# vim: set ft=sh :

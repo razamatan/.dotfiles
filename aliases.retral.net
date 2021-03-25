@@ -1,24 +1,13 @@
-# findep: find out what REALLY uses it
-alias findep "find /var/db/pkg -name '*DEPEND' | xargs grep"
-
-# envconf: configure using our environment
-[ -f /etc/make.conf ] && alias envconf "$(grep ^CFLAGS /etc/make.conf) ./configure"
-[ -f /opt/local/etc/mk.conf ] && alias envconf "$(grep ^CFLAGS /opt/local/etc/mk.conf) ./configure"
-
 # pscan: prints recent port scan activities
 alias pscan "grep -hs 'PORT SCAN' /var/log/critical /var/log/iptables | sed -e 's:${HOSTNAME}.*SRC=::' -e 's: DST.*::' | uniq"
 
-# financial crypt
-alias mountFinance "sudo mount \$(sudo lofiadm -a /zshares/archive/.private -c aes-256-cbc) ~/.secure"
-alias umountFinance "sudo umount ~/.secure; sudo lofiadm -d /zshares/archive/.private"
-
 alias synergy "synergys -f -a localhost"
 alias chrome-remote-desktop "/opt/google/chrome-remote-desktop/chrome-remote-desktop -f --start"
-
-alias etc-update "dispatch-conf"
 
 alias dbssh "ssh -L 3307:esquire.jinyi.us:3306"
 
 # add -H host -U user
 # ~? for help, ~. to exit.  must be done after newline.
 alias ipmi "ipmitool -I lanplus sol activate"
+
+# vim: set ft=sh :

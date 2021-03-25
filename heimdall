@@ -1,5 +1,5 @@
 # green
-export BASH_COLOR='0;35'
+export PRMT_COLOR='0;35'
 export SCRN_COLOR='5'
 export TMUX_COLOR='magenta'
 

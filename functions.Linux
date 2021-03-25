@@ -1,0 +1,11 @@
+cpufreqs() {
+   for i in $(seq 0 `cut -f2 -d- /sys/devices/system/cpu/possible`); do
+      echo cpu$i `sudo cat /sys/devices/system/cpu/cpu\$i/cpufreq/scaling_cur_freq`
+   done
+}
+
+if command_exists emerge ; then
+  logmerge() { emerge $@ 2>&1 | tee /var/log/emerge.last; }
+fi
+
+# vim: set ft=sh :

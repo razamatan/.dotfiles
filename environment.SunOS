@@ -3,11 +3,13 @@
 #PAGER=less
 LANG=en_US.UTF-8
 TZ=US/Pacific
+PATH=~/bin:/usr/local/sbin:/usr/local/bin:/opt/local/sbin:/opt/local/bin:/usr/sbin:/usr/bin:/sbin
 MANPATH=/opt/local/man:/usr/share/man
 MANPATH=${MANPATH}:/opt/local/gcc47/man:/opt/local/java/sun6/man
 MANPATH=${MANPATH}:/opt/local/lib/perl5/man:/opt/local/lib/perl5/vendor_perl/man
-PATH=/usr/local/sbin:/usr/local/bin:/opt/local/sbin:/opt/local/bin:/usr/sbin:/usr/bin:/sbin
 TERMINFO=/opt/local/share/lib/terminfo
 
 #export FTPMODE MAIL PAGER
-export LANG TZ MANPATH PATH TERMINFO
+export LANG TZ PATH MANPATH TERMINFO
+
+# vim: ft=sh :

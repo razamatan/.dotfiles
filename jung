@@ -1,5 +1,5 @@
 # brown/yellow
-export BASH_COLOR='0;33'
+export PRMT_COLOR='0;33'
 export SCRN_COLOR='y'
 export TMUX_COLOR='yellow'
 

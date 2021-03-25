@@ -1,4 +1,4 @@
-setenv() { export $1="$2"; }
+command_exists() { command -v "$1" >/dev/null 2>&1 }
 
 alias() {
    if [ $# -eq 2 ] ; then
@@ -8,55 +8,6 @@ alias() {
    else
       builtin alias
    fi
-}
-
-pushd() {
-   export DIRMAX=${DIRMAX:-10}
-   local verbose=0
-   local ret
-   if [ "$1" == "-v" ] ; then
-      verbose=1
-      shift
-   fi
-   if [ $# -eq 0 ] ; then
-      builtin cd
-      ret=$?
-      builtin pushd -n $OLDPWD > /dev/null
-   elif [ "$1" == "-" ] ; then
-      builtin cd -
-      ret=$?
-      builtin pushd -n $OLDPWD > /dev/null
-   else
-      builtin pushd "$@" > /dev/null
-      ret=$?
-   fi
-   local len=${#DIRSTACK[@]}
-   for i in `seq 1 $len`; do
-      eval p=~$i
-      if [ "$p" = "$PWD" ] ; then
-         builtin popd -n +$i > /dev/null
-         break
-      fi
-   done
-   [ $len -gt $DIRMAX ] && builtin popd -n -0 > /dev/null
-   [ $verbose -eq 1 ] && builtin dirs -v
-   return $ret
-}
-
-popd() {
-   local verbose=0
-   if [ "$1" == "-v" ] ; then
-      verbose=1
-      shift
-   fi
-   builtin popd "$@" > /dev/null
-   local ret=$?
-   [ $verbose -eq 1 ] && builtin dirs -v
-   return $ret
-}
-
-cdp() {
-   pushd +$1
 }
 
 # viw: vi `which binary`
@@ -132,20 +83,6 @@ pyenv() {
          echo "$env is not a root of a virtual env"
       fi
    fi
-}
-
-# helper for showing current git branch in prompt
-git_branch_prompt() {
-   [ "$PWD" == "/zhome" ] && return
-   ref=$(git symbolic-ref HEAD 2> /dev/null) || return
-   echo "(${ref#refs/heads/})"
-}
-
-# helper for showing current hg branch in prompt
-hg_branch_prompt() {
-   [ "$PWD" == "/zhome" ] && return
-   branch=$(hg branch 2> /dev/null) || return
-   echo "(${branch})"
 }
 
 # vim: ft=sh :

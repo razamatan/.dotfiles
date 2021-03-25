@@ -1,9 +1,9 @@
-setenv CDPATH ${CDPATH}:~/Documents:~/Desktop:/Volumes
-
-setenv PATH /usr/local/homebrew/bin:${PATH}
-setenv MANPATH /usr/local/homebrew/man:${MANPATH}
-setenv BASH_SILENCE_DEPRECATION_WARNING 1
-#setenv NODE_PATH /usr/local/homebrew/lib/node
-#setenv HOMEBREW_TEMP /opt/tmp
+if command_exists brew && [ "`brew --prefix`" != '/usr/local' ] ; then
+   local brew_home=$(brew --prefix)
+   FPATH=$brew_home/share/zsh/site-functions:$FPATH
+   PATH=$brew_home/bin:${PATH}
+   export FPATH PATH
+   #HOMEBREW_TEMP=/opt/tmp
+fi
 
 # vim: ft=sh :

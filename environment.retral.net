@@ -1,2 +1,4 @@
-[ -d /zshares/media ] && setenv FORTUNE_PATH /zshares/media/sw/fortunes
-[ -d /zmedia/sw ] && setenv FORTUNE_PATH /zmedia/sw/fortunes
+[ -d /zshares/media ] && export FORTUNE_PATH=/zshares/media/sw/fortunes
+[ -d /zmedia/sw ] && export FORTUNE_PATH=/zmedia/sw/fortunes
+
+# vim: set ft=sh :

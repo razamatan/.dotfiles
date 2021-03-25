@@ -11,27 +11,19 @@
 #   /usr/bin/ssh $@
 #}
 
-logmerge() { emerge $@ 2>&1 | tee /var/log/emerge.last; }
-
-cpufreqs() {
-   for i in $(seq 0 `cut -f2 -d- /sys/devices/system/cpu/possible`); do
-      echo cpu$i `sudo cat /sys/devices/system/cpu/cpu\$i/cpufreq/scaling_cur_freq`
-   done
-}
-
 killproc() {
    if [ -z $1 ] ; then
-      echo "usage: killproc /path/pidfile"
+      echo "usage: killproc /path/pidfile command"
    else
       pid=`cat $1`
       for i in `seq 1 10` ; do
          ! ps -p $pid > /dev/null && break
-         echo not killed
-         killall -TERM stunnel
+         echo $2 not killed
+         killall -TERM $2
          sleep 1
       done
       # last try
-      ps -p $pid > /dev/null && killall -KILL stunnel
+      ps -p $pid > /dev/null && killall -KILL $2
    fi
 }
 
