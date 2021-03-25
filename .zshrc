@@ -45,6 +45,11 @@ SAVEHIST=HISTSIZE
 HISTORY_IGNORE="(&|l|l?|cd|[bf]g|exit|h *)"
 h() { fc -lim "*$@*" 1 }
 
+# these workarounds are only needed in tmux under osx
+bindkey -e
+bindkey "\033[1~" beginning-of-line
+bindkey "\033[4~" end-of-line
+
 # prompt
 if [ "$TERM" != 'dumb' ] && [ $USER != 'root' ] ; then
    setopt prompt_subst
