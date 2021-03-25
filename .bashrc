@@ -54,15 +54,15 @@ if [ "$TERM" != 'dumb' ] && [ -n "$BASH" ]  && [ $USER != 'root' ] ; then
 fi
 
 # xterm title
-[ $SSH_TTY ] && IS_SSH="[ssh] "
-case $TERM in
-   rxvt|*term|xterm*)
-      PROMPT_COMMAND='echo -ne "\033]0;${IS_SSH}${USER}@${HOSTNAME%%.*}: ${PWD/$HOME/~}\007"'
-   ;;
-   screen)
-      PROMPT_COMMAND='echo -ne "\033_${IS_SSH}${USER}@${HOSTNAME%%.*}:${PWD/$HOME/~}\033\\"'
-   ;;
-esac
+#[ $SSH_TTY ] && IS_SSH="[ssh] "
+#case $TERM in
+#   rxvt|*term|xterm*)
+#      PROMPT_COMMAND='echo -ne "\033]0;${IS_SSH}${USER}@${HOSTNAME%%.*}: ${PWD/$HOME/~}\007"'
+#   ;;
+#   screen)
+#      PROMPT_COMMAND='echo -ne "\033_${IS_SSH}${USER}@${HOSTNAME%%.*}:${PWD/$HOME/~}\033\\"'
+#   ;;
+#esac
 
 # completion
 FIGNORE="~:.o:.swp"
