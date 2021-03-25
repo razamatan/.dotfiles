@@ -33,7 +33,7 @@ unalias -a
 
 # colors for ls, etc.
 if command_exists dircolors ; then
-   local DIR_COLORS=${DIR_COLORS:-/etc/DIR_COLORS}
+   DIR_COLORS=${DIR_COLORS:-/etc/DIR_COLORS}
    [ -r $DIR_COLORS ] && eval "`dircolors -b $DIR_COLORS`" || eval "`dircolors -b`"
 fi
 

@@ -8,7 +8,8 @@ alias todo "vi ~/Documents/todo"
 alias erase "stty erase "
 alias md5sum "md5 -q"
 
-alias myconfigure "CFLAGS='-O3 -pipe -fomit-frame-pointer' ./configure --prefix $HOME/local"
+# envconf: configure using our environment
+alias envconf "CFLAGS='-O3 -pipe -fomit-frame-pointer' ./configure --prefix $HOME/local"
 
 alias mpgstream "mpg123 -b 1024 --preload 0.5 -@"
 alias kexp "mpgstream http://live-mp3-128.kexp.org:8000/listen.pls"

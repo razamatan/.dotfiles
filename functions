@@ -1,4 +1,6 @@
-command_exists() { command -v "$1" >/dev/null 2>&1 }
+command_exists() {
+   command -v "$1" >/dev/null 2>&1
+}
 
 alias() {
    if [ $# -eq 2 ] ; then
