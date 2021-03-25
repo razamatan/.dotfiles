@@ -1,6 +1,3 @@
-#FTPMODE=auto
-#MAIL=/var/mail/${LOGNAME:?}
-#PAGER=less
 LANG=en_US.UTF-8
 TZ=US/Pacific
 PATH=~/bin:/usr/local/sbin:/usr/local/bin:/opt/local/sbin:/opt/local/bin:/usr/sbin:/usr/bin:/sbin
@@ -8,8 +5,14 @@ MANPATH=/opt/local/man:/usr/share/man
 MANPATH=${MANPATH}:/opt/local/gcc47/man:/opt/local/java/sun6/man
 MANPATH=${MANPATH}:/opt/local/lib/perl5/man:/opt/local/lib/perl5/vendor_perl/man
 TERMINFO=/opt/local/share/lib/terminfo
-
-#export FTPMODE MAIL PAGER
 export LANG TZ PATH MANPATH TERMINFO
+
+#FTPMODE=auto
+#MAIL=/var/mail/${LOGNAME:?}
+#PAGER=less
+#export FTPMODE MAIL PAGER
+
+# update tmux version since path now probably has tmux in it
+export TMUX_VERSION=`tmux -V 2>/dev/null | cut -d' ' -f2`
 
 # vim: ft=sh :

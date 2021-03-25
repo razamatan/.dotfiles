@@ -5,7 +5,7 @@ PATH=~/bin:$PATH
 PYTHONSTARTUP=${HOME}/.dotfiles/pyrc
 SCREENRC=${HOME}/.dotfiles/screenrc
 BZR_LOG=$HOME/.bazaar/bzr.log
-TMUX_VERSION=$(tmux -V 2>&- | cut -d' ' -f2)
+TMUX_VERSION=`tmux -V 2>/dev/null | cut -d' ' -f2`
 
 # term colors  (1;30 default)
 # Black       0;30     Dark Gray     1;30
