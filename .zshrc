@@ -21,7 +21,7 @@ alias redot ". ~/.zshrc"
 
 # cd dirstack
 DIRSTACKSIZE=${DIRSTACKSIZE:-15}
-setopt autopushd pushdminus pushdsilent pushdtohome pushd_ignore_dups
+setopt auto_pushd pushd_minus pushd_silent pushd_to_home pushd_ignore_dups
 d() {
    local dir
    select dir in $dirstack; do
@@ -45,23 +45,31 @@ SAVEHIST=HISTSIZE
 HISTORY_IGNORE="(&|l|l?|cd|[bf]g|exit|h *)"
 h() { fc -lim "*$@*" 1 }
 
-# these workarounds are only needed in tmux under osx
+# osx specific workarounds for now
 bindkey -e
-bindkey "\033[1~" beginning-of-line
-bindkey "\033[4~" end-of-line
+if [ $TERM_PROGRAM = 'Apple_Terminal' ] ; then
+   # case insensitive file globs
+   setopt no_case_glob
+   # fix tmux issues
+   bindkey "\033[1~" beginning-of-line
+   bindkey "\033[4~" end-of-line
+   # case insensitive completions
+   zstyle ':completion:*'  matcher-list 'm:{a-z}={A-Z}'
+fi
 
 # prompt
 if [ "$TERM" != 'dumb' ] && [ $USER != 'root' ] ; then
-   setopt prompt_subst
    autoload -Uz vcs_info
-   precmd_functions+=(vcs_info)
-   RPROMPT=\$vcs_info_msg_0_
    zstyle ':vcs_info:*' enable git
+   precmd_functions+=(vcs_info)
+
+   setopt prompt_subst
+   RPROMPT="\$vcs_info_msg_0_"
+   PS1="%(?..?%? )%F{$TMUX_COLOR}%m%F{red}<%f%h %1~%F{red}>%f%# "
 fi
 
 # xterm title
 
 # completion
 FIGNORE="~:.o:.swp"
-autoload -Uz compinit
-compinit
+autoload -Uz compinit && compinit
