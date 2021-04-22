@@ -47,7 +47,7 @@ h() { fc -lim "*$@*" 1 }
 
 # osx specific workarounds for now
 bindkey -e
-if [ $TERM_PROGRAM = 'Apple_Terminal' ] ; then
+if [ $THIS_OS = 'Darwin' ] ; then
    # case insensitive file globs
    setopt no_case_glob
    # fix tmux issues
