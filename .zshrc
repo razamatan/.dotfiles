@@ -39,7 +39,7 @@ fi
 
 # shell options
 ulimit -c 0             # cores are for imperfect people ;)
-setopt extended_history hist_expire_dups_first hist_ignore_dups hist_ignore_space hist_no_store hist_verify share_history
+setopt extended_history hist_expire_dups_first hist_ignore_dups hist_ignore_space hist_no_store hist_verify
 HISTSIZE=5000
 SAVEHIST=HISTSIZE
 HISTORY_IGNORE="(&|l|l?|cd|[bf]g|exit|h *)"
