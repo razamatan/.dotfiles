@@ -4,7 +4,8 @@ export SCRN_COLOR='y'
 export TMUX_COLOR='yellow'
 
 export PATH=$PATH:/Users/jin/promotedai/bin
-source /usr/local/opt/nvm/nvm.sh
 #export JAVA_HOME=/usr/local/opt/openjdk@11
+[ -f /usr/local/opt/nvm/nvm.sh ] && . /usr/local/opt/nvm/nvm.sh
+[ -f ~/.cargo/env ] && . ~/.cargo/env
 
 # vim: set ft=sh : #
