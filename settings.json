@@ -33,7 +33,7 @@
         "defaults":
         {
             // Put settings here that you want to apply to all profiles.
-            "fontSize": 9,
+            "fontSize": 12,
             "antialiasingMode": "cleartype",
             "useAcrylic": true,
             "acrylicOpacity": 0.9,
