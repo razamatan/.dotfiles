@@ -8,4 +8,13 @@ export PATH=$PATH:/Users/jin/promotedai/bin
 [ -f /usr/local/opt/nvm/nvm.sh ] && . /usr/local/opt/nvm/nvm.sh
 [ -f ~/.cargo/env ] && . ~/.cargo/env
 
+hgetall() {
+   if [ -z $3 ] ; then
+      echo "usage: hgetall hostname port key [db#]"
+   else
+      db=${4:-0}
+      redis-cli -h $1 -p $2 -n $db hgetall "$3" | cut -f2 -d\  | paste -d\  - -
+   fi
+}
+
 # vim: set ft=sh : #
