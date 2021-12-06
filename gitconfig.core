@@ -18,5 +18,7 @@
    default = matching
 [pull]
    rebase = true
+[format]
+   pretty = fuller
 
 ;  vim: set ft=gitconfig:
