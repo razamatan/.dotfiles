@@ -14,7 +14,7 @@ esac
 THIS_BOX=$(cut -d. -f1 <<< $fqdn)
 THIS_DOMAIN=$(awk -F. '{print $(NF-1)"."$NF}' <<< $fqdn)
 THIS_OS=`uname -s`
-export THIS_BOX THIS_DOMAIN THIS_OS THIS_OS
+export THIS_BOX THIS_DOMAIN THIS_OS
 unset fqdn
 
 # include bashrc
