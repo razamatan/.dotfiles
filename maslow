@@ -21,4 +21,20 @@ ytp() {
    yt-dlp -f bestaudio ytsearch:"$1" -o - 2>/dev/null | ffplay -nodisp -autoexit -i -
 }
 
-# vim: set ft=sh : #
+_aws_vault_info() {
+   if [ ! -z $AWS_VAULT ] ; then
+      local color
+      [ $(strftime -r "%FT%TZ" `date -u +%FT%TZ`) -lt $(strftime -r "%FT%TZ" $AWS_SESSION_EXPIRATION) ] && color=green || color=red
+      echo "%{%F{$color}%}$AWS_VAULT%{%f%}"
+   fi
+}
+
+export KUBE_PS1_SEPARATOR=''
+source <(sed 's/kube_ps1() {/_kube_ps1() {/' /usr/local/share/kube-ps1.sh)
+kube_ps1() {
+   [[ "$PWD" == */promotedai/* ]] && _kube_ps1
+}
+
+export AWS_SESSION_TOKEN_TTL=24h
+
+# vim: set ft=zsh : #

@@ -64,7 +64,7 @@ if [ "$TERM" != 'dumb' ] && [ $USER != 'root' ] ; then
    precmd_functions+=(vcs_info)
 
    setopt prompt_subst
-   RPROMPT="\$vcs_info_msg_0_"
+   RPROMPT="\$(_aws_vault_info)\$(kube_ps1)\$vcs_info_msg_0_"
    PS1="%(?..?%? )%F{$TMUX_COLOR}%m%F{red}<%f%h %1~%F{red}>%f%# "
 fi
 
