@@ -79,7 +79,7 @@ pyenv() {
       if [ -x $env/bin/python -a -e $env/bin/activate ] ; then
          source $env/bin/activate
          if [ "$TERM" = "screen" ]; then
-            printf '\ek%s\e\\' `basename $env`
+            printf '\ek%s\e\\' ${env##*/}
          fi
       else
          echo "$env is not a root of a virtual env"

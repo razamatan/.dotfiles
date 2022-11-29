@@ -4,7 +4,6 @@ export SCRN_COLOR='y'
 export TMUX_COLOR='yellow'
 
 export PATH=$PATH:/Users/jin/promotedai/bin
-export JAVA_HOME=/usr/local/opt/openjdk@11/libexec/openjdk.jdk/Contents/Home
 [ -f ~/.cargo/env ] && . ~/.cargo/env
 
 hgetall() {
@@ -21,17 +20,15 @@ ytp() {
 }
 
 _aws_vault_info() {
-   if [ ! -z $AWS_VAULT ] ; then
-      local color
-      [ $(strftime -r "%FT%TZ" `date -u +%FT%TZ`) -lt $(strftime -r "%FT%TZ" $AWS_SESSION_EXPIRATION) ] && color=green || color=red
-      echo "%{%F{$color}%}$AWS_VAULT%{%f%}"
-   fi
+   [ -z $AWS_VAULT ] && return
+   local color=001
+   [ $(date -ju +"%s") -lt $(date -jf "%FT%TZ" $AWS_SESSION_EXPIRATION +"%s") ] && color=002
+   echo -e " %{%F{$color}%}\u26bf${AWS_VAULT}%{%f%}"
 }
 
-export KUBE_PS1_SEPARATOR=''
-source <(sed 's/kube_ps1() {/_kube_ps1() {/' /usr/local/share/kube-ps1.sh)
-kube_ps1() {
-   [[ "$PWD" == */promotedai/* ]] && _kube_ps1
+_kube_info() {
+   [ -z $KUBECONFIG ] && return
+   echo -e " %{%F{012}%}\u2388${KUBECONFIG##*/}%{%f%}"
 }
 
 export AWS_SESSION_TOKEN_TTL=24h

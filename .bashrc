@@ -80,4 +80,6 @@ if ! shopt -oq posix; then
   unset bashcomp_script
 fi
 
+command_exists direnv && eval "$(direnv hook bash)"
+
 # vim: set ft=sh:

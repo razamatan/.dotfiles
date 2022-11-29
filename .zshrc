@@ -61,10 +61,15 @@ fi
 if [ "$TERM" != 'dumb' ] && [ $USER != 'root' ] ; then
    autoload -Uz vcs_info
    zstyle ':vcs_info:*' enable git
+   zstyle ':vcs_info:*' check-for-changes true
+   zstyle ':vcs_info:*' formats $' \u16a0%b%u%c'
+   zstyle ':vcs_info:*' actionformats $' %{%F{001}%}%a\u16a0%{%f%}%b%u%c'
+   zstyle ':vcs_info:*' unstagedstr '%F{009}!'
+   zstyle ':vcs_info:*' stagedstr '%F{002}+'
    precmd_functions+=(vcs_info)
 
    setopt prompt_subst
-   RPROMPT="\$(_aws_vault_info)\$(kube_ps1)\$vcs_info_msg_0_"
+   RPROMPT="\$(_aws_vault_info)\$(_kube_info)\$vcs_info_msg_0_"
    PS1="%(?..?%? )%F{$TMUX_COLOR}%m%F{red}<%f%h %1~%F{red}>%f%# "
 fi
 
@@ -73,3 +78,5 @@ fi
 # completion
 FIGNORE="~:.o:.swp"
 autoload -Uz compinit && compinit
+
+command_exists direnv && eval "$(direnv hook zsh)"
