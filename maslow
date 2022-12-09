@@ -31,6 +31,10 @@ _kube_info() {
    echo -e " %{%F{012}%}\u2388${KUBECONFIG##*/}%{%f%}"
 }
 
+cdp() {
+   cd ~/promotedai/$1
+}
+
 export AWS_SESSION_TOKEN_TTL=24h
 
 # vim: set ft=zsh : #
