@@ -22,7 +22,7 @@ ytp() {
 _aws_vault_info() {
    [ -z $AWS_VAULT ] && return
    local color=001
-   [ $(date -ju +"%s") -lt $(date -jf "%FT%TZ" $AWS_SESSION_EXPIRATION +"%s") ] && color=002
+   [ $(date -ju +"%s") -lt $(TZ=UTC date -jf "%FT%TZ" $AWS_SESSION_EXPIRATION +"%s") ] && color=002
    echo -e " %{%F{$color}%}\u26bf${AWS_VAULT}%{%f%}"
 }
 
