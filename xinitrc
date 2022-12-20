@@ -2,7 +2,8 @@
 export XSESSION=awesome
 
 # keybpard repeat rate
-xset r rate 275 40
+# use /etc/X11/xinit/xserverrc instead: -ardelay 275 -arinterval 25
+#xset r rate 275 40
 
 # monitor
 #xset +dpms
