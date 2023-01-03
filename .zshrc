@@ -78,5 +78,6 @@ fi
 # completion
 FIGNORE="~:.o:.swp"
 autoload -Uz compinit && compinit
+compdef '_files -/ -W ~/promotedai' cdp
 
 command_exists direnv && eval "$(direnv hook zsh)"

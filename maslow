@@ -3,7 +3,7 @@ export PRMT_COLOR='0;33'
 export SCRN_COLOR='y'
 export TMUX_COLOR='yellow'
 
-export PATH=$PATH:/Users/jin/promotedai/bin
+export PATH=$PATH:$HOME/promotedai/bin
 [ -f ~/.cargo/env ] && . ~/.cargo/env
 
 hgetall() {
