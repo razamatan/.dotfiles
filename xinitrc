@@ -6,8 +6,9 @@ export XSESSION=awesome
 #xset r rate 275 40
 
 # monitor
+xset s 300
+XSECURELOCK_BLANK_TIMEOUT=10 XSECURELOCK_PASSWORD_PROMPT=time_hex xss-lock -l -- xsecurelock &
 #xset +dpms
-#xset s off
 #xrandr --rate 144
 xrandr --output DP-1 --mode 5120x1440
 
