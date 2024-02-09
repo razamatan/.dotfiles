@@ -1,0 +1,76 @@
+--- /mnt/c/Users/jin/AppData/Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState/settings.json.old	2024-01-24 02:41:33.996647400 -0800
++++ /mnt/c/Users/jin/AppData/Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState/settings.json	2024-02-09 02:15:26.512947500 -0800
+@@ -30,8 +30,8 @@
+         }
+     ],
+     "copyFormatting": "none",
+-    "copyOnSelect": false,
+-    "defaultProfile": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
++    "copyOnSelect": true,
++    "defaultProfile": "{1fea8875-4ae4-57ef-9852-bd9a80396e94}",
+     "initialCols": 132,
+     "initialRows": 60,
+     "newTabMenu": 
+@@ -42,34 +42,50 @@
+     ],
+     "profiles": 
+     {
+-        "defaults": {},
++        "defaults": 
++        {
++            "antialiasingMode": "cleartype",
++            "cursorShape": "underscore",
++            "font": 
++            {
++                "size": 12.0
++            },
++            "opacity": 75,
++            "useAcrylic": true
++        },
+         "list": 
+         [
+             {
++                "colorScheme": "Campbell Powershell",
+                 "commandline": "%SystemRoot%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
++                "cursorShape": "vintage",
+                 "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+                 "hidden": false,
+                 "name": "Windows PowerShell"
+             },
+             {
++                "colorScheme": "Vintage",
+                 "commandline": "%SystemRoot%\\System32\\cmd.exe",
++                "cursorShape": "vintage",
+                 "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
+                 "hidden": false,
+                 "name": "Command Prompt"
+             },
+             {
+                 "guid": "{b453ae62-4e3d-5e58-b989-0a998ec441b8}",
+-                "hidden": false,
++                "hidden": true,
+                 "name": "Azure Cloud Shell",
+                 "source": "Windows.Terminal.Azure"
+             },
+             {
++                "colorScheme": "Tango Dark",
+                 "guid": "{1fea8875-4ae4-57ef-9852-bd9a80396e94}",
+                 "hidden": false,
+                 "name": "gen2",
+                 "source": "Windows.Terminal.Wsl"
+             },
+             {
++                "colorScheme": "Tango Dark",
+                 "guid": "{75e11271-65c0-587d-93b0-30a5b318336f}",
+                 "hidden": false,
+                 "name": "fun2",
+@@ -287,5 +303,7 @@
+             "yellow": "#808000"
+         }
+     ],
+-    "themes": []
++    "showTerminalTitleInTitlebar": true,
++    "themes": [],
++    "useAcrylicInTabRow": true
+ }
+\ No newline at end of file
