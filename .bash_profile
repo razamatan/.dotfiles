@@ -1,7 +1,7 @@
 # This file is sourced by bash when you log in interactively.
 
 # $OSTYPE (linux-gnu, darwin13, solaris2.11)
-# $HOSTYPE (x86_64, i386)
+# $HOSTTYPE (x86_64, i386)
 # $MACHTYPE (x86_64-pc-linux-gnu, x86_64-apple-darwin13, i386-pc-solaris2.11)
 
 case $OSTYPE in
