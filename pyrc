@@ -6,7 +6,7 @@ try:
    import readline
    import os, rlcompleter, atexit
 
-   history_file = os.path.expanduser('~/.pyhistory')
+   history_file = os.path.expanduser('~/.python_history')
    try:
        readline.read_history_file(history_file)
    except IOError:
