@@ -1,8 +1,3 @@
-# brown/yellow
-export PRMT_COLOR='0;33'
-export SCRN_COLOR='y'
-export TMUX_COLOR='yellow'
-
 export PATH=$PATH:$HOME/promotedai/bin
 [ -f ~/.cargo/env ] && . ~/.cargo/env
 
@@ -34,6 +29,12 @@ _kube_info() {
 cdp() {
    cd ~/promotedai/$1
 }
+compdef '_files -/ -W ~/promotedai' cdp
+
+# prompt
+if [ "$TERM" != 'dumb' ] && [ $USER != 'root' ] ; then
+   RPROMPT="\$(_aws_vault_info)\$(_kube_info)\$vcs_info_msg_0_"
+fi
 
 export AWS_SESSION_TOKEN_TTL=24h
 

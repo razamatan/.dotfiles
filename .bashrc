@@ -11,7 +11,7 @@ unalias -a
 [ $THIS_BOX ] || . ~/.dotfiles/.bash_profile
 
 # host specific (mainly for colors)
-[ -f ~/.dotfiles/$THIS_BOX ] && . ~/.dotfiles/$THIS_BOX
+[ -f ~/.dotfiles/$THIS_BOX.env ] && . ~/.dotfiles/$THIS_BOX.env
 
 # environment
 [ -f ~/.dotfiles/functions ] && . ~/.dotfiles/functions
@@ -82,4 +82,7 @@ fi
 
 command_exists direnv && eval "$(direnv hook bash)"
 
-# vim: set ft=sh:
+# host-specific overrides
+[ -f ~/.dotfiles/$THIS_BOX ] && . ~/.dotfiles/$THIS_BOX
+
+# vim: set ft=bash:

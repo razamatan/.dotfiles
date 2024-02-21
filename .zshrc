@@ -3,6 +3,9 @@
 # ensures env was originally setup correctly
 [ $THIS_BOX ] || . ~/.dotfiles/.zshenv
 
+# host specific (mainly for colors)
+[ -f ~/.dotfiles/$THIS_BOX.env ] && . ~/.dotfiles/$THIS_BOX.env
+
 # environment
 [ -f ~/.dotfiles/functions ] && . ~/.dotfiles/functions
 [ -f ~/.dotfiles/functions.$THIS_OS ] && . ~/.dotfiles/functions.$THIS_OS
@@ -69,7 +72,7 @@ if [ "$TERM" != 'dumb' ] && [ $USER != 'root' ] ; then
    precmd_functions+=(vcs_info)
 
    setopt prompt_subst
-   RPROMPT="\$(_aws_vault_info)\$(_kube_info)\$vcs_info_msg_0_"
+   RPROMPT="\$vcs_info_msg_0_"
    PS1="%(?..?%? )%F{$TMUX_COLOR}%m%F{red}<%f%h %1~%F{red}>%f%# "
 fi
 
@@ -78,6 +81,8 @@ fi
 # completion
 FIGNORE="~:.o:.swp"
 autoload -Uz compinit && compinit
-compdef '_files -/ -W ~/promotedai' cdp
 
 command_exists direnv && eval "$(direnv hook zsh)"
+
+# host-specific overrides
+[ -f ~/.dotfiles/$THIS_BOX ] && . ~/.dotfiles/$THIS_BOX
