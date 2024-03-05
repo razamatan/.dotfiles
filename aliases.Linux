@@ -4,8 +4,6 @@ if command_exists emerge ; then
 
   # findep: find out what REALLY uses it
   alias findep "find /var/db/pkg -name '*DEPEND' | xargs grep"
-
-  alias etc-update "dispatch-conf"
 fi
 
 # vim: set ft=sh :
