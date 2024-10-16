@@ -1,5 +1,5 @@
 LANG=en_US.UTF-8
-TZ=US/Pacific
+TZ=Asia/Seoul # US/Pacific
 PATH=~/bin:/usr/local/sbin:/usr/local/bin:/opt/local/sbin:/opt/local/bin:/usr/sbin:/usr/bin:/sbin
 MANPATH=/opt/local/man:/usr/share/man
 MANPATH=${MANPATH}:/opt/local/gcc47/man:/opt/local/java/sun6/man

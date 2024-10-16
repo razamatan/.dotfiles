@@ -70,21 +70,4 @@ archive_maildir() {
    fi
 }
 
-pyenv() {
-   if [ $# -ne 1 ] ; then
-      echo "usage: pyenv [virtualenv name]"
-   else
-      local env=$1
-      [ ${env:0:1} != '/' ] && env=~/env/$1
-      if [ -x $env/bin/python -a -e $env/bin/activate ] ; then
-         source $env/bin/activate
-         if [ "$TERM" = "screen" ]; then
-            printf '\ek%s\e\\' ${env##*/}
-         fi
-      else
-         echo "$env is not a root of a virtual env"
-      fi
-   fi
-}
-
 # vim: ft=sh :
