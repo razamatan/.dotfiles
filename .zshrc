@@ -76,8 +76,6 @@ if [ "$TERM" != 'dumb' ] && [ $USER != 'root' ] ; then
    PS1="%(?..?%? )%F{$TMUX_COLOR}%m%F{red}<%f%h %1~%F{red}>%f%# "
 fi
 
-# xterm title
-
 # completion
 FIGNORE="~:.o:.swp"
 autoload -Uz compinit && compinit

@@ -1,0 +1,9 @@
+function open() {
+  local wpth=`wslpath -wa "$@"`
+  explorer.exe "$wpth"
+}
+
+function copen() {
+  local wpth=`wslpath -wa "$@"`
+  /mnt/c/Program\ Files/Google/Chrome/Application/chrome.exe "$wpth"
+}

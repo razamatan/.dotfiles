@@ -53,17 +53,6 @@ if [ "$TERM" != 'dumb' ] && [ -n "$BASH" ]  && [ $USER != 'root' ] ; then
    export PS1="\$(hg_branch_prompt)\$(git_branch_prompt)\[\e[${PRMT_COLOR}m\]\h\[\e[0;31m\]<\[\e[0m\]\! \W\[\e[0;31m\]>\[\e[0m\]\$ "
 fi
 
-# xterm title
-#[ $SSH_TTY ] && IS_SSH="[ssh] "
-#case $TERM in
-#   rxvt|*term|xterm*)
-#      PROMPT_COMMAND='echo -ne "\033]0;${IS_SSH}${USER}@${HOSTNAME%%.*}: ${PWD/$HOME/~}\007"'
-#   ;;
-#   screen)
-#      PROMPT_COMMAND='echo -ne "\033_${IS_SSH}${USER}@${HOSTNAME%%.*}:${PWD/$HOME/~}\033\\"'
-#   ;;
-#esac
-
 # completion
 FIGNORE="~:.o:.swp"
 if ! shopt -oq posix; then
