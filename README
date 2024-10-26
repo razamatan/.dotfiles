@@ -1,2 +1,6 @@
 basically, symlink any of the .??* files.
 non-dotted files aren't meant to be referenced directly.
+
+windows terminal settings.json is located at:
+%LOCALAPPDATA%\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json
+# you could mklink it from here (\\wsl$\Ubuntu\home\%USERNAME%\.dotfiles\settings.json)
