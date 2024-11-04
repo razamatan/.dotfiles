@@ -6,7 +6,7 @@ alias notes "vi ~/Documents/notes"
 alias todo "vi ~/Documents/todo"
 
 alias erase "stty erase "
-alias md5sum "md5 -q"
+alias md5sum "md5 -r"
 
 # envconf: configure using our environment
 alias envconf "CFLAGS='-O3 -pipe -fomit-frame-pointer' ./configure --prefix $HOME/local"
