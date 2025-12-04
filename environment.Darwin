@@ -1,9 +1,3 @@
-if command_exists brew && [ "`brew --prefix`" != '/usr/local' ] ; then
-   local brew_home=$(brew --prefix)
-   FPATH=$brew_home/share/zsh/site-functions:$FPATH
-   PATH=$brew_home/bin:${PATH}
-   export FPATH PATH
-   #HOMEBREW_TEMP=/opt/tmp
-fi
+command_exists brew && [ "`brew --prefix`" != '/usr/local' ] && eval "$(brew shellenv)"
 
 # vim: ft=sh :
