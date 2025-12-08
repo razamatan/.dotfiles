@@ -2,7 +2,6 @@
 EDITOR="vim -X"
 
 PATH=~/bin:$PATH
-PYTHONSTARTUP=${HOME}/.dotfiles/pyrc
 SCREENRC=${HOME}/.dotfiles/screenrc
 BZR_LOG=$HOME/.bazaar/bzr.log
 TMUX_VERSION=`tmux -V 2>/dev/null | cut -d' ' -f2`
